@@ -1,0 +1,24 @@
+spring:
+  cloud:
+    vault:
+      # Local Vault dev-mode instance from docker/docker-compose.yml
+      uri: "http://localhost:8200"
+      authentication: TOKEN
+      token: "root"
+
+jeap:
+  security:
+    oauth2:
+      resourceserver:
+        authorization-server:
+          issuer: "http://localhost:8081/jme-jwe-auth-scs"
+          jwk-set-uri: "${jeap.security.oauth2.resourceserver.authorization-server.issuer}/.well-known/jwks.json"
+  monitor:
+    prometheus:
+      user: "prometheus"
+      password: "{noop}secret"
+
+frontend:
+  auth:
+    authority: ${jeap.security.oauth2.resourceserver.authorization-server.issuer}
+    application-url: "http://localhost:8080${server.servlet.context-path}/"

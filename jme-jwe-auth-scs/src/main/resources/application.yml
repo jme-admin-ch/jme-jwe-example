@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: jme-jwe-auth-scs
+server:
+  servlet:
+    context-path: /${spring.application.name}
+oauth-mock-data:
+  users:
+    - id: "user"
+      given-name: "Henriette"
+      family-name: "Muster"
+      locale: "DE"
+      preferred-username: "12345"
+      userroles:
+        - "jme_@person_#read"
+        - "jme_@person_#write"

@@ -46,7 +46,6 @@
     </modules>
 
     <properties>
-        <jeap-spring-boot-jwe-starter.version>1.2.0</jeap-spring-boot-jwe-starter.version>
         <jeap-oauth-mock-server.version>6.1.0</jeap-oauth-mock-server.version>
         <jme-spring-boot-integration-test.version>5.4.0</jme-spring-boot-integration-test.version>
         <maven.javadoc.skip>false</maven.javadoc.skip>
@@ -68,16 +67,6 @@
                 <groupId>${project.groupId}</groupId>
                 <artifactId>jme-jwe-auth-scs</artifactId>
                 <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>ch.admin.bit.jeap</groupId>
-                <artifactId>jeap-spring-boot-jwe-starter</artifactId>
-                <version>${jeap-spring-boot-jwe-starter.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>ch.admin.bit.jeap</groupId>
-                <artifactId>jeap-spring-boot-jwe-test</artifactId>
-                <version>${jeap-spring-boot-jwe-starter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

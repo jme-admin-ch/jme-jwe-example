@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: jme-jwe-scs
+  main:
+    banner-mode: off
+
+server:
+  port: 8080
+  servlet:
+    context-path: /${spring.application.name}
+  compression:
+    enabled: true
+
+jeap:
+  security:
+    oauth2:
+      resourceserver:
+        system-name: "jme"
+  web:
+    headers:
+      content-security-policy: "default-src 'self' localhost:* *.admin.ch data:; script-src 'self' 'unsafe-inline' *.admin.ch; style-src 'self' 'unsafe-inline'; frame-src 'self' *.admin.ch;"
+  jwe:
+    vault:
+      # Exportable rsa-4096 transit key, see docker/vault/init-vault.sh
+      transit-key-name: jme-jwe-scs-key
+      secret-engine-path: transit/jme
+    filter:
+      # Encrypt all API traffic ...
+      included-paths:
+        - /api/**
+      # ... except the allowlisted public API (plain JSON, but still requires authentication)
+      excluded-paths:
+        - /api/public/**
+
+frontend:
+  auth:
+    authority: "notSet"
+    application-url: "notSet"
+    client-id: jme-jwe-ui
