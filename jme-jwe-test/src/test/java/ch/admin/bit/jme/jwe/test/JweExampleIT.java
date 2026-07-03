@@ -108,7 +108,17 @@ class JweExampleIT extends BootServiceSpringIntegrationTestBase {
     }
 
     @Test
-    void plaintextRequestToEncryptedEndpointIsRejected() {
+    void plaintextPostToEncryptedEndpointIsRejected() {
+        given()
+                .header("Authorization", "Bearer " + accessToken())
+                .header("Content-Type", "application/json")
+                .body("{\"firstName\":\"Plain\",\"lastName\":\"Text\",\"ahvNumber\":\"756.0000.0000.00\"}")
+                .post(SCS_BASE_URL + "/api/persons")
+                .then().statusCode(415);
+    }
+
+    @Test
+    void getWithoutJoseAcceptIsRejected() {
         given()
                 .header("Authorization", "Bearer " + accessToken())
                 .header("Accept", "application/json")

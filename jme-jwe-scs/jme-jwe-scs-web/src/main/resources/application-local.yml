@@ -21,4 +21,3 @@ jeap:
 frontend:
   auth:
     authority: ${jeap.security.oauth2.resourceserver.authorization-server.issuer}
-    application-url: "http://localhost:8080${server.servlet.context-path}/"

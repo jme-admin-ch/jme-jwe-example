@@ -5,6 +5,6 @@ module.exports = {
 	setupFilesAfterEnv: ["<rootDir>/tests/setupJest.ts"],
 	coverageDirectory: "<rootDir>/coverage/sonarQube",
 	collectCoverage: true,
-	collectCoverageFrom: ["<rootDir>/src/app"],
+	collectCoverageFrom: ["<rootDir>/src/app/**/*.ts"],
 	testPathIgnorePatterns: ["\\.test\\."],
 };

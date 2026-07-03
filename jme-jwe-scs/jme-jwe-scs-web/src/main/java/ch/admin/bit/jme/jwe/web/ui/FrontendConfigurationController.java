@@ -24,7 +24,6 @@ public class FrontendConfigurationController {
         return FrontendAuthConfigurationDto.builder()
                 .authority(frontendConfigProperties.getAuthority())
                 .clientId(frontendConfigProperties.getClientId())
-                .applicationUrl(frontendConfigProperties.getApplicationUrl())
                 .build();
     }
 

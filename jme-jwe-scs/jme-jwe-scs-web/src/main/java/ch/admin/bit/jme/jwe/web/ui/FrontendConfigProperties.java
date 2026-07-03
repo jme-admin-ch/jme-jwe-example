@@ -30,10 +30,4 @@ public class FrontendConfigProperties {
      */
     @NotBlank
     private String clientId;
-
-    /**
-     * URL the frontend is served from; used as OAuth2 redirect URL after login.
-     */
-    @NotBlank
-    private String applicationUrl;
 }

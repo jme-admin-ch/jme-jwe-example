@@ -7,7 +7,6 @@ import {CONTEXT_PATH} from '../shared/app-config';
 interface FrontendAuthConfiguration {
 	authority: string;
 	clientId: string;
-	applicationUrl: string;
 }
 
 /**

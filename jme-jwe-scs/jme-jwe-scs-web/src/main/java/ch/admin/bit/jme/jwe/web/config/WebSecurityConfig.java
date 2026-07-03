@@ -24,7 +24,7 @@ public class WebSecurityConfig {
      */
     @Bean
     @Order(Ordered.HIGHEST_PRECEDENCE + 11)
-    public SecurityFilterChain uiSecurityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain uiSecurityFilterChain(HttpSecurity http) {
         RequestMatcher apiMatcher = PathPatternRequestMatcher.pathPattern("/api/**");
 
         http.securityMatcher(new NegatedRequestMatcher(apiMatcher))

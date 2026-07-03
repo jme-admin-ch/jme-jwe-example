@@ -8,9 +8,7 @@ oauth-mock-data:
     - client-id: "jme-jwe-ui"
       context: "USER"
       registered-redirect-uri: [ "http://localhost:8080/jme-jwe-scs/",
-                                 "http://localhost:8080/jme-jwe-scs/silent-refresh.html",
-                                 "http://localhost:4200/",
-                                 "http://localhost:4200/silent-refresh.html" ]
+                                 "http://localhost:4200/" ]
       userroles: [ "jme_@person_#read", "jme_@person_#write" ]
 
     - client-id: "jme-jwe-it-client"
