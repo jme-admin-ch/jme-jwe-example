@@ -21,6 +21,13 @@
             <version>${jme-spring-boot-integration-test.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- Client-side JWE encryption/decryption in the integration tests -->
+        <dependency>
+            <groupId>com.nimbusds</groupId>
+            <artifactId>nimbus-jose-jwt</artifactId>
+            <version>${nimbus-jose-jwt.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
