@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    vault:
+      # On CI the test runner is attached to the compose network, so Vault is reached by
+      # its container hostname instead of a published localhost port.
+      uri: "http://vault:8200"

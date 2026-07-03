@@ -1,0 +1,39 @@
+services:
+
+  ############################################
+  # HashiCorp Vault (JWE key management)
+  ############################################
+
+  vault:
+    image: hashicorp/vault:1.21.2
+    ports:
+      # Published on 8201 to avoid clashing with other locally running Vault instances
+      - "8201:8200"
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: "root"
+      VAULT_DEV_LISTEN_ADDRESS: "0.0.0.0:8200"
+    cap_add:
+      - IPC_LOCK
+    healthcheck:
+      test: [ "CMD", "vault", "status", "-address=http://127.0.0.1:8200" ]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+
+  # Creates the transit secret engine and the exportable rsa-4096 key used by the JWE starter
+  # (see jeap.jwe.vault.* in jme-jwe-scs/jme-jwe-scs-web/src/main/resources/application.yml)
+  vault_init:
+    image: hashicorp/vault:1.21.2
+    depends_on:
+      vault:
+        condition: service_healthy
+    environment:
+      VAULT_ADDR: "http://vault:8200"
+      VAULT_TOKEN: "root"
+    entrypoint:
+      - /bin/sh
+      - -exc
+      - |
+        vault secrets enable -path=transit/jme transit || true
+        vault write -f transit/jme/keys/jme-jwe-scs-key type=rsa-4096 exportable=true
+        vault read transit/jme/keys/jme-jwe-scs-key

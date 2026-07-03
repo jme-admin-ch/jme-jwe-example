@@ -2,7 +2,7 @@ spring:
   cloud:
     vault:
       # Local Vault dev-mode instance from docker/docker-compose.yml
-      uri: "http://localhost:8200"
+      uri: "http://localhost:8201"
       authentication: TOKEN
       token: "root"
 
