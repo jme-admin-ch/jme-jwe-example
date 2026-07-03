@@ -1,0 +1,48 @@
+publiccodeYmlVersion: 0.5.0
+name: jme-jwe-example
+applicationSuite: JME
+softwareVersion: 1.0.0
+releaseDate: 2026-07-03
+url: "https://github.com/jme-admin-ch/jme-jwe-example.git"
+landingURL: "https://github.com/jme-admin-ch/jme"
+platforms:
+  - web
+categories:
+  - application-development
+developmentStatus: stable
+softwareType: standalone/backend
+organisation:
+  uri: https://ld.admin.ch/office/V.1.7
+  name: Federal Office of Information Technology, Systems and Telecommunication
+description:
+  en:
+    localisedName: jme-jwe-example
+    shortDescription: Example project demonstrating transparent JWE end-to-end encryption with the jEAP JWE starter and client.
+    longDescription: >
+      The jEAP JWE starter provides transparent JSON Web Encryption (JWE) based end-to-end
+      encryption for jEAP Spring Boot services, backed by HashiCorp Vault for key management.
+      Its frontend companion, the jEAP JWE client, is an Angular library that transparently
+      encrypts requests and decrypts responses in the browser.
+      This repository provides a self-contained system (SCS) example showing both libraries
+      working together with jEAP security (OAuth2) and the jEAP web configuration starter.
+      It contains the following modules:
+      * jme-jwe-scs: A self-contained system consisting of a Spring Boot backend using the
+        jEAP JWE starter and an Angular/Oblique frontend using the jEAP JWE client
+      * jme-jwe-auth-scs: An instance of the OAuth mock server used as authorization server
+      * jme-jwe-test: Automated integration tests covering the local Docker Compose setup
+    features:
+      - Demonstrates encrypted POST requests and encrypted GET responses via JWE
+      - Demonstrates unencrypted requests through the configured allowlist
+      - Includes jEAP security starter and jEAP web config starter integration
+      - Local Docker Compose setup with HashiCorp Vault transit engine for key management
+legal:
+  license: Apache-2.0
+maintenance:
+  type: internal
+  contacts:
+    - name: Federal Office of Information Technology, Systems and Telecommunication FOITT
+      email: jeap-community@bit.admin.ch
+localisation:
+  localisationReady: false
+  availableLanguages:
+    - en
