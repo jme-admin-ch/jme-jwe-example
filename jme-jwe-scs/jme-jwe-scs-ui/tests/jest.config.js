@@ -1,0 +1,10 @@
+"use strict";
+
+module.exports = {
+	preset: "jest-preset-angular",
+	setupFilesAfterEnv: ["<rootDir>/tests/setupJest.ts"],
+	coverageDirectory: "<rootDir>/coverage/sonarQube",
+	collectCoverage: true,
+	collectCoverageFrom: ["<rootDir>/src/app"],
+	testPathIgnorePatterns: ["\\.test\\."],
+};

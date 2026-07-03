@@ -15,6 +15,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>jme-jwe-scs-ui</module>
         <module>jme-jwe-scs-web</module>
     </modules>
 </project>

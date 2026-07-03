@@ -1,0 +1,98 @@
+<h1>jEAP JWE Example</h1>
+
+<p>
+	Logged in as <strong>{{ username }}</strong
+	>. All requests below are sent with an OAuth2 Bearer token. Open the browser's network tab to see which requests and responses are transported as
+	<code>application/jose</code> (encrypted) and which ones as plain <code>application/json</code>.
+</p>
+
+@if (error()) {
+	<div class="ob-alert ob-alert-error" role="alert">{{ error() }}</div>
+}
+
+<div class="jwe-cards">
+	<mat-card appearance="outlined">
+		<mat-card-header>
+			<mat-card-title>Encrypted GET</mat-card-title>
+			<mat-card-subtitle>GET /api/persons &mdash; response encrypted via JWE-Response-Key</mat-card-subtitle>
+		</mat-card-header>
+		<mat-card-content>
+			<p>
+				The jEAP JWE client adds <code>Accept: application/jose</code> and a <code>JWE-Response-Key</code> header; the backend encrypts the person list with
+				that key.
+			</p>
+			@if (persons(); as personList) {
+				<table class="ob-table">
+					<thead>
+						<tr>
+							<th>First name</th>
+							<th>Last name</th>
+							<th>AHV number</th>
+						</tr>
+					</thead>
+					<tbody>
+						@for (person of personList; track person.id) {
+							<tr>
+								<td>{{ person.firstName }}</td>
+								<td>{{ person.lastName }}</td>
+								<td>{{ person.ahvNumber }}</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			}
+		</mat-card-content>
+		<mat-card-actions>
+			<button type="button" mat-flat-button obButton="primary" (click)="loadPersons()">Load persons</button>
+		</mat-card-actions>
+	</mat-card>
+
+	<mat-card appearance="outlined">
+		<mat-card-header>
+			<mat-card-title>Encrypted POST</mat-card-title>
+			<mat-card-subtitle>POST /api/persons &mdash; request body encrypted as compact JWE</mat-card-subtitle>
+		</mat-card-header>
+		<mat-card-content>
+			<p>The JSON body is encrypted in the browser before it is sent; the backend decrypts it transparently.</p>
+			<form [formGroup]="personForm" (ngSubmit)="createPerson()">
+				<mat-form-field>
+					<mat-label>First name</mat-label>
+					<input matInput formControlName="firstName" required />
+				</mat-form-field>
+				<mat-form-field>
+					<mat-label>Last name</mat-label>
+					<input matInput formControlName="lastName" required />
+				</mat-form-field>
+				<mat-form-field>
+					<mat-label>AHV number</mat-label>
+					<input matInput formControlName="ahvNumber" required />
+				</mat-form-field>
+				<button type="submit" mat-flat-button obButton="primary" [disabled]="personForm.invalid">Create person</button>
+			</form>
+			@if (createdPerson(); as person) {
+				<p class="jwe-result">
+					Created person <strong>{{ person.firstName }} {{ person.lastName }}</strong> with id <code>{{ person.id }}</code>
+				</p>
+			}
+		</mat-card-content>
+	</mat-card>
+
+	<mat-card appearance="outlined">
+		<mat-card-header>
+			<mat-card-title>Unencrypted request (allowlist)</mat-card-title>
+			<mat-card-subtitle>GET /api/public/info &mdash; excluded from encryption, still authenticated</mat-card-subtitle>
+		</mat-card-header>
+		<mat-card-content>
+			<p>
+				<code>/api/public/**</code> is on the JWE allowlist (<code>jeap.jwe.filter.excluded-paths</code>), so this request is plain JSON. The backend still
+				requires a valid Bearer token.
+			</p>
+			@if (publicInfo(); as info) {
+				<pre class="jwe-result">{{ info | json }}</pre>
+			}
+		</mat-card-content>
+		<mat-card-actions>
+			<button type="button" mat-flat-button obButton="primary" (click)="loadPublicInfo()">Load public info</button>
+		</mat-card-actions>
+	</mat-card>
+</div>

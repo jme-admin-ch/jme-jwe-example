@@ -1,0 +1,260 @@
+{
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"cli": {
+		"packageManager": "npm"
+	},
+	"newProjectRoot": "projects",
+	"projects": {
+		"jme-jwe-scs-ui": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss",
+					"standalone": false
+				},
+				"@schematics/angular:directive": {
+					"standalone": false
+				},
+				"@schematics/angular:pipe": {
+					"standalone": false
+				}
+			},
+			"root": "",
+			"sourceRoot": "src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:browser",
+					"options": {
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							{
+								"glob": "**/*",
+								"input": "node_modules/@oblique/oblique/assets",
+								"output": "assets"
+							},
+							{
+								"glob": "*/**",
+								"input": "node_modules/@oblique/oblique/styles/fonts",
+								"output": "assets/fonts"
+							},
+							"src/assets"
+						],
+						"styles": [
+							"node_modules/@oblique/oblique/styles/css/oblique-core.css",
+							"src/styles/styles.scss"
+						],
+						"scripts": [
+							"node_modules/@oblique/oblique/ob-features.js"
+						],
+						"allowedCommonJsDependencies": [
+							"ajv",
+							"ajv-formats"
+						],
+						"main": "src/main.ts",
+						"outputPath": "target/classes/static",
+						"index": "src/index.html"
+					},
+					"configurations": {
+						"development": {
+							"buildOptimizer": false,
+							"vendorChunk": true
+						},
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "2MB",
+									"maximumError": "3MB"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "3kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all"
+						},
+						"local": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "1.7mb",
+									"maximumError": "2mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "3kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"fileReplacements": [
+								{
+									"replace": "projects/sandbox/src/environments/environment.ts",
+									"with": "projects/sandbox/src/environments/environment.local.ts"
+								}
+							]
+						},
+						"dev": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "1.7mb",
+									"maximumError": "2mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "3kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"fileReplacements": [
+								{
+									"replace": "projects/sandbox/src/environments/environment.ts",
+									"with": "projects/sandbox/src/environments/environment.dev.ts"
+								}
+							],
+							"optimization": false,
+							"sourceMap": true
+						},
+						"ref": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "1.7mb",
+									"maximumError": "2mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "3kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"fileReplacements": [
+								{
+									"replace": "projects/sandbox/src/environments/environment.ts",
+									"with": "projects/sandbox/src/environments/environment.ref.ts"
+								}
+							]
+						},
+						"test": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "1.7mb",
+									"maximumError": "2mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "3kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"fileReplacements": [
+								{
+									"replace": "projects/sandbox/src/environments/environment.ts",
+									"with": "projects/sandbox/src/environments/environment.test.ts"
+								}
+							]
+						},
+						"abn": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "1.7mb",
+									"maximumError": "2mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "3kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"fileReplacements": [
+								{
+									"replace": "projects/sandbox/src/environments/environment.ts",
+									"with": "projects/sandbox/src/environments/environment.abn.ts"
+								}
+							]
+						},
+						"prod": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "1.7mb",
+									"maximumError": "2mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "3kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"fileReplacements": [
+								{
+									"replace": "projects/sandbox/src/environments/environment.ts",
+									"with": "projects/sandbox/src/environments/environment.prod.ts"
+								}
+							]
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"configurations": {
+						"production": {
+							"buildTarget": "jme-jwe-scs-ui:build:production"
+						},
+						"development": {
+							"buildTarget": "jme-jwe-scs-ui:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"proxyConfig": "proxy.conf.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-builders/jest:run",
+					"options": {
+						"config": "tests/jest.config.js",
+						"tsConfig": "tsconfig.spec.json",
+						"max-workers": [
+							"2"
+						]
+					}
+				},
+				"lint": {
+					"builder": "@angular-eslint/builder:lint",
+					"options": {
+						"lintFilePatterns": [
+							"src/**/*.ts",
+							"src/**/*.html"
+						]
+					}
+				}
+			}
+		}
+	},
+	"schematics": {
+		"@schematics/angular:component": {
+			"prefix": "app",
+			"style": "scss"
+		},
+		"@schematics/angular:directive": {
+			"prefix": "app"
+		}
+	}
+}
