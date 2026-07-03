@@ -1,1 +1,43 @@
-{}
+{
+	"jwe": {
+		"header": {
+			"title": "Esempio jEAP JWE"
+		},
+		"footer": {
+			"info": "© {{year}} Ufficio federale dell'informatica e della telecomunicazione UFIT"
+		},
+		"home": {
+			"title": "Esempio jEAP JWE",
+			"intro": "Collegato come <strong>{{username}}</strong>. Tutte le richieste sottostanti vengono inviate con un token OAuth2 Bearer. Aprire la scheda di rete del browser per vedere quali richieste e risposte vengono trasmesse come <code>application/jose</code> (cifrato) e quali come <code>application/json</code> (testo in chiaro).",
+			"table": {
+				"firstName": "Nome",
+				"lastName": "Cognome",
+				"ahvNumber": "Numero AVS"
+			},
+			"encryptedGet": {
+				"title": "GET cifrato",
+				"subtitle": "GET /api/persons — risposta cifrata tramite JWE-Response-Key",
+				"description": "Il client jEAP JWE aggiunge <code>Accept: application/jose</code> e un header <code>JWE-Response-Key</code>; il backend cifra l'elenco delle persone con questa chiave.",
+				"button": "Carica persone"
+			},
+			"encryptedPost": {
+				"title": "POST cifrato",
+				"subtitle": "POST /api/persons — corpo della richiesta cifrato come JWE compatto",
+				"description": "Il corpo JSON viene cifrato nel browser prima dell'invio; il backend lo decifra in modo trasparente.",
+				"button": "Crea persona",
+				"created": "Persona <strong>{{firstName}} {{lastName}}</strong> creata con id <code>{{id}}</code>"
+			},
+			"allowlist": {
+				"title": "Richiesta non cifrata (allowlist)",
+				"subtitle": "GET /api/public/info — escluso dalla cifratura, ma autenticato",
+				"description": "<code>/api/public/**</code> è nella allowlist JWE (<code>jeap.jwe.filter.excluded-paths</code>), quindi questa richiesta è JSON puro. Il backend richiede comunque un token Bearer valido.",
+				"button": "Carica info pubbliche"
+			},
+			"error": {
+				"loadPersons": "Caricamento delle persone non riuscito: {{message}}",
+				"createPerson": "Creazione della persona non riuscita: {{message}}",
+				"loadPublicInfo": "Caricamento delle info pubbliche non riuscito: {{message}}"
+			}
+		}
+	}
+}

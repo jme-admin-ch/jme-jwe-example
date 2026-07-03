@@ -1,1 +1,43 @@
-{}
+{
+	"jwe": {
+		"header": {
+			"title": "jEAP JWE Beispiel"
+		},
+		"footer": {
+			"info": "© {{year}} Bundesamt für Informatik und Telekommunikation BIT"
+		},
+		"home": {
+			"title": "jEAP JWE Beispiel",
+			"intro": "Angemeldet als <strong>{{username}}</strong>. Alle untenstehenden Requests werden mit einem OAuth2 Bearer Token gesendet. Öffnen Sie den Netzwerk-Tab des Browsers, um zu sehen, welche Requests und Responses als <code>application/jose</code> (verschlüsselt) und welche als <code>application/json</code> (Klartext) übertragen werden.",
+			"table": {
+				"firstName": "Vorname",
+				"lastName": "Nachname",
+				"ahvNumber": "AHV-Nummer"
+			},
+			"encryptedGet": {
+				"title": "Verschlüsselter GET",
+				"subtitle": "GET /api/persons — Response verschlüsselt via JWE-Response-Key",
+				"description": "Der jEAP JWE Client fügt <code>Accept: application/jose</code> und einen <code>JWE-Response-Key</code> Header hinzu; das Backend verschlüsselt die Personenliste mit diesem Schlüssel.",
+				"button": "Personen laden"
+			},
+			"encryptedPost": {
+				"title": "Verschlüsselter POST",
+				"subtitle": "POST /api/persons — Request-Body als Compact JWE verschlüsselt",
+				"description": "Der JSON-Body wird im Browser verschlüsselt, bevor er gesendet wird; das Backend entschlüsselt ihn transparent.",
+				"button": "Person erstellen",
+				"created": "Person <strong>{{firstName}} {{lastName}}</strong> mit Id <code>{{id}}</code> erstellt"
+			},
+			"allowlist": {
+				"title": "Unverschlüsselter Request (Allowlist)",
+				"subtitle": "GET /api/public/info — von der Verschlüsselung ausgenommen, aber authentisiert",
+				"description": "<code>/api/public/**</code> steht auf der JWE-Allowlist (<code>jeap.jwe.filter.excluded-paths</code>), dieser Request ist deshalb reines JSON. Das Backend verlangt weiterhin ein gültiges Bearer Token.",
+				"button": "Public Info laden"
+			},
+			"error": {
+				"loadPersons": "Laden der Personen fehlgeschlagen: {{message}}",
+				"createPerson": "Erstellen der Person fehlgeschlagen: {{message}}",
+				"loadPublicInfo": "Laden der Public Info fehlgeschlagen: {{message}}"
+			}
+		}
+	}
+}

@@ -1,1 +1,43 @@
-{}
+{
+	"jwe": {
+		"header": {
+			"title": "Exemple jEAP JWE"
+		},
+		"footer": {
+			"info": "© {{year}} Office fédéral de l'informatique et de la télécommunication OFIT"
+		},
+		"home": {
+			"title": "Exemple jEAP JWE",
+			"intro": "Connecté en tant que <strong>{{username}}</strong>. Toutes les requêtes ci-dessous sont envoyées avec un jeton OAuth2 Bearer. Ouvrez l'onglet réseau du navigateur pour voir quelles requêtes et réponses sont transmises en <code>application/jose</code> (chiffré) et lesquelles en <code>application/json</code> (texte clair).",
+			"table": {
+				"firstName": "Prénom",
+				"lastName": "Nom",
+				"ahvNumber": "Numéro AVS"
+			},
+			"encryptedGet": {
+				"title": "GET chiffré",
+				"subtitle": "GET /api/persons — réponse chiffrée via JWE-Response-Key",
+				"description": "Le client jEAP JWE ajoute <code>Accept: application/jose</code> et un en-tête <code>JWE-Response-Key</code> ; le backend chiffre la liste des personnes avec cette clé.",
+				"button": "Charger les personnes"
+			},
+			"encryptedPost": {
+				"title": "POST chiffré",
+				"subtitle": "POST /api/persons — corps de la requête chiffré en JWE compact",
+				"description": "Le corps JSON est chiffré dans le navigateur avant l'envoi ; le backend le déchiffre de manière transparente.",
+				"button": "Créer la personne",
+				"created": "Personne <strong>{{firstName}} {{lastName}}</strong> créée avec l'id <code>{{id}}</code>"
+			},
+			"allowlist": {
+				"title": "Requête non chiffrée (allowlist)",
+				"subtitle": "GET /api/public/info — exclu du chiffrement, mais authentifié",
+				"description": "<code>/api/public/**</code> figure sur la liste d'exclusion JWE (<code>jeap.jwe.filter.excluded-paths</code>), cette requête est donc du JSON pur. Le backend exige toujours un jeton Bearer valable.",
+				"button": "Charger les infos publiques"
+			},
+			"error": {
+				"loadPersons": "Échec du chargement des personnes : {{message}}",
+				"createPerson": "Échec de la création de la personne : {{message}}",
+				"loadPublicInfo": "Échec du chargement des infos publiques : {{message}}"
+			}
+		}
+	}
+}

@@ -1,5 +1,6 @@
 import {Component, inject, signal} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
+import {TranslateService} from '@ngx-translate/core';
 import {OAuthService} from 'angular-oauth2-oidc';
 import {PersonService} from '../person/person.service';
 import {Person, PublicInfo} from '../person/person.model';
@@ -24,6 +25,7 @@ export class Home {
 
 	private readonly personService = inject(PersonService);
 	private readonly oauthService = inject(OAuthService);
+	private readonly translateService = inject(TranslateService);
 
 	get username(): string {
 		const claims = this.oauthService.getIdentityClaims() as {given_name?: string; family_name?: string} | null;
@@ -34,7 +36,7 @@ export class Home {
 		this.error.set(null);
 		this.personService.getPersons().subscribe({
 			next: persons => this.persons.set(persons),
-			error: err => this.error.set(`Loading persons failed: ${err.message ?? err}`)
+			error: err => this.error.set(this.translateService.instant('jwe.home.error.loadPersons', {message: err.message ?? err}))
 		});
 	}
 
@@ -48,7 +50,7 @@ export class Home {
 				this.createdPerson.set(person);
 				this.loadPersons();
 			},
-			error: err => this.error.set(`Creating person failed: ${err.message ?? err}`)
+			error: err => this.error.set(this.translateService.instant('jwe.home.error.createPerson', {message: err.message ?? err}))
 		});
 	}
 
@@ -56,7 +58,7 @@ export class Home {
 		this.error.set(null);
 		this.personService.getPublicInfo().subscribe({
 			next: info => this.publicInfo.set(info),
-			error: err => this.error.set(`Loading public info failed: ${err.message ?? err}`)
+			error: err => this.error.set(this.translateService.instant('jwe.home.error.loadPublicInfo', {message: err.message ?? err}))
 		});
 	}
 }
