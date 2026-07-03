@@ -18,7 +18,7 @@ public class FrontendConfigurationControllerSecurityConfig {
      */
     @Bean
     @Order(Ordered.HIGHEST_PRECEDENCE + 12)
-    SecurityFilterChain configSecurityFilterChain(HttpSecurity http) throws Exception {
+    SecurityFilterChain configSecurityFilterChain(HttpSecurity http) {
         http.securityMatcher(PathPatternRequestMatcher.withDefaults()
                 .matcher(HttpMethod.GET, "/ui-api/configuration/**"));
         http.authorizeHttpRequests(authorizeHttpRequests ->

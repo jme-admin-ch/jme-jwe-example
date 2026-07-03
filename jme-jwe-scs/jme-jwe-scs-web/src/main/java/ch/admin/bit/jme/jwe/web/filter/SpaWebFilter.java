@@ -23,8 +23,7 @@ public class SpaWebFilter extends OncePerRequestFilter {
                 !path.startsWith("/.well-known") &&
                 !path.startsWith("/management") &&
                 !path.startsWith("/actuator") &&
-                !path.contains(".") &&
-                path.matches("/(.*)")) {
+                !path.contains(".")) {
             request.getRequestDispatcher("/index.html").forward(request, response);
             return;
         }
