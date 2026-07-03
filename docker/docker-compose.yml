@@ -33,6 +33,11 @@ services:
     environment:
       VAULT_ADDR: "http://vault:8200"
       VAULT_TOKEN: "root"
+      # Bypass the corporate proxy injected by the CI docker daemon, otherwise the
+      # vault CLI cannot reach http://vault:8200 (proxy answers 504 DNS look up failed)
+      HTTP_PROXY: ""
+      HTTPS_PROXY: ""
+      NO_PROXY: vault
     entrypoint:
       - /bin/sh
       - -exc
