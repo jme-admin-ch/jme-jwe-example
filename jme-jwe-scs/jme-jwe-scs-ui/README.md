@@ -1,59 +1,21 @@
-# JmeJweScsUi
+# jme-jwe-scs-ui
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.18.
+Angular frontend of the jEAP JWE example, built with [Oblique](https://oblique.bit.admin.ch/) and
+[@jeap/jeap-jwe-client](https://www.npmjs.com/package/@jeap/jeap-jwe-client).
 
-## Development server
+The relevant integration points:
 
-To start a local development server, run:
+* [`app-module.ts`](src/app/app-module.ts): registers `provideJeapJweClient` (pointing at the
+  backend's `/.well-known/jwe-configuration`), the `jeapJweInterceptor`, and
+  `OAuthModule.forRoot` for the Bearer token.
+* [`auth-initializer.ts`](src/app/auth/auth-initializer.ts): loads the OIDC configuration from the
+  backend and performs the authorization code flow with PKCE against the OAuth mock server.
+* [`person.service.ts`](src/app/person/person.service.ts): plain `HttpClient` calls — the JWE
+  interceptor transparently encrypts/decrypts everything matching the backend's included paths.
 
-```bash
-ng serve
-```
+The Maven build (see [`pom.xml`](pom.xml)) runs the frontend tests and the production build via
+npm and writes the output to `target/classes/static`, so the frontend is packaged into a jar the
+backend serves as static resources.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+During development, run `npm start` to serve the app on http://localhost:4200 with a proxy to the
+locally running backend (see [`proxy.conf.js`](proxy.conf.js)).
