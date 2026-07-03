@@ -16,6 +16,7 @@ import org.junit.jupiter.api.Test;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static java.nio.charset.StandardCharsets.US_ASCII;
@@ -32,6 +33,9 @@ import static org.assertj.core.api.Assertions.assertThat;
  *     <li>Encrypted GET of {@code /api/persons}</li>
  *     <li>Unencrypted (allowlisted) GET of {@code /api/public/info}</li>
  * </ul>
+ * The Vault transit key is rotated once by the {@code vault_init} service, so two key versions
+ * exist: the tests verify that the JWKS serves both public keys (newest first) and that payloads
+ * encrypted with the previous key version are still accepted (rotation grace).
  */
 @SuppressWarnings("java:S112") // test helpers chain Nimbus/JCA calls with distinct checked exceptions
 class JweExampleIT extends BootServiceSpringIntegrationTestBase {
@@ -51,11 +55,36 @@ class JweExampleIT extends BootServiceSpringIntegrationTestBase {
     }
 
     @Test
-    void jwksIsServedFromVaultTransitKey() throws Exception {
-        RSAKey publicKey = jwePublicKey();
+    void jwksServesBothVaultTransitKeyVersionsNewestFirst() throws Exception {
+        List<RSAKey> publicKeys = jwePublicKeys();
 
-        assertThat(publicKey.getKeyID()).startsWith(VAULT_TRANSIT_KEY_NAME + ":");
-        assertThat(publicKey.getAlgorithm().getName()).isEqualTo("RSA-OAEP-256");
+        assertThat(publicKeys).hasSize(2);
+        assertThat(publicKeys.get(0).getKeyID()).isEqualTo(VAULT_TRANSIT_KEY_NAME + ":2");
+        assertThat(publicKeys.get(1).getKeyID()).isEqualTo(VAULT_TRANSIT_KEY_NAME + ":1");
+        assertThat(publicKeys).allSatisfy(key ->
+                assertThat(key.getAlgorithm().getName()).isEqualTo("RSA-OAEP-256"));
+    }
+
+    @Test
+    void encryptedPostWithPreviousKeyVersionStillWorks() throws Exception {
+        // Rotation grace: clients that still encrypt with the previous key version (e.g. with a
+        // cached JWKS from before the rotation) are still served until the version is evicted.
+        RSAKey previousKey = jwePublicKeys().get(1);
+        SecretKey responseCek = aes256();
+        String personJson = "{\"firstName\":\"Greta\",\"lastName\":\"Grace\",\"ahvNumber\":\"756.4444.5555.66\"}";
+
+        byte[] encryptedResponse = given()
+                .header("Authorization", "Bearer " + accessToken())
+                .header("Content-Type", APPLICATION_JOSE)
+                .header("Accept", APPLICATION_JOSE)
+                .header(HEADER_RESPONSE_KEY, responseKeyEnvelope(previousKey, responseCek))
+                .body(encryptRequest(previousKey, personJson).getBytes(US_ASCII))
+                .post(SCS_BASE_URL + "/api/persons")
+                .then().statusCode(201)
+                .contentType(APPLICATION_JOSE)
+                .extract().asByteArray();
+
+        assertThat(decrypt(encryptedResponse, responseCek)).contains("\"lastName\":\"Grace\"");
     }
 
     @Test
@@ -140,10 +169,16 @@ class JweExampleIT extends BootServiceSpringIntegrationTestBase {
     }
 
     private static RSAKey jwePublicKey() throws Exception {
+        return jwePublicKeys().get(0);
+    }
+
+    private static List<RSAKey> jwePublicKeys() throws Exception {
         String jwks = given().get(SCS_BASE_URL + "/.well-known/jwks.json")
                 .then().statusCode(200)
                 .extract().asString();
-        return JWKSet.parse(jwks).getKeys().get(0).toRSAKey();
+        return JWKSet.parse(jwks).getKeys().stream()
+                .map(key -> (RSAKey) key)
+                .toList();
     }
 
     private static SecretKey aes256() throws Exception {

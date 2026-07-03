@@ -32,9 +32,12 @@ JSON, and the Angular services use the ordinary `HttpClient`. The jEAP JWE servl
 [`application.yml`](jme-jwe-scs/jme-jwe-scs-web/src/main/resources/application.yml)).
 
 Key management is backed by the HashiCorp Vault transit secret engine: the Docker Compose setup
-creates an exportable `rsa-4096` transit key (see [`docker/docker-compose.yml`](docker/docker-compose.yml)),
-the backend serves the corresponding public key at `/.well-known/jwks.json`, and the frontend
-encrypts against it.
+creates an exportable `rsa-4096` transit key and rotates it once (see
+[`docker/docker-compose.yml`](docker/docker-compose.yml)), so two key versions exist. The backend
+serves both public keys at `/.well-known/jwks.json` with the newest version first
+(`jme-jwe-scs-key:2`), the frontend encrypts against the newest one, and payloads encrypted with
+the previous version (`jme-jwe-scs-key:1`) are still decrypted — the rotation grace that keeps
+clients with a cached JWKS working across a key rotation.
 
 ## Changes
 
@@ -102,7 +105,8 @@ Boot's Docker Compose support to automatically start and stop the Vault infrastr
 starts the two Spring Boot services as Maven subprocesses via `mvnw spring-boot:run` and polls
 their health endpoints. The tests then exercise the JWE protocol end-to-end with real
 Vault-backed keys: encrypted POST, encrypted GET, the unencrypted allowlisted request, plaintext
-rejection, and the JWKS endpoint serving the Vault transit key.
+rejection, the JWKS endpoint serving both Vault transit key versions (newest first), and the
+rotation grace — an encrypted request using the previous key version is still accepted.
 
 ```shell
 # Build and install all local modules

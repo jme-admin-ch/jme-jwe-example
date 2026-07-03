@@ -21,7 +21,8 @@ jeap:
       content-security-policy: "default-src 'self' localhost:* *.admin.ch data:; script-src 'self' 'unsafe-inline' *.admin.ch; style-src 'self' 'unsafe-inline'; frame-src 'self' *.admin.ch;"
   jwe:
     vault:
-      # Exportable rsa-4096 transit key, created by the vault_init service in docker/docker-compose.yml
+      # Exportable rsa-4096 transit key, created and rotated once (two key versions) by the
+      # vault_init service in docker/docker-compose.yml
       transit-key-name: jme-jwe-scs-key
       secret-engine-path: transit/jme
     filter:

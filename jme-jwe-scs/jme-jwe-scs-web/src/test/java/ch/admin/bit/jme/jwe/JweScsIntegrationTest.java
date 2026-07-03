@@ -26,6 +26,7 @@ import org.springframework.web.client.RestClient;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
+import java.util.List;
 import java.util.Objects;
 
 import static java.nio.charset.StandardCharsets.US_ASCII;
@@ -80,7 +81,11 @@ class JweScsIntegrationTest {
 
     @DynamicPropertySource
     static void staticKeys(DynamicPropertyRegistry registry) {
+        // Two static keys mirror the two Vault transit key versions of the Docker Compose setup:
+        // the last configured key is the newest version and is used for encryption, the older
+        // version remains accepted for decryption (rotation grace).
         registry.add("jeap.jwe.test.keys[0]", () -> JweTestKeys.rsa4096Pem(0));
+        registry.add("jeap.jwe.test.keys[1]", () -> JweTestKeys.rsa4096Pem(1));
     }
 
     // --- Showcased scenario 1: encrypted POST ----------------------------------------------------
@@ -206,6 +211,34 @@ class JweScsIntegrationTest {
                 .retrieve().toBodilessEntity().getStatusCode().value()).isEqualTo(200);
     }
 
+    // --- Multiple key versions ---------------------------------------------------------------------
+
+    @Test
+    void jwksServesBothKeyVersionsNewestFirst() throws Exception {
+        List<RSAKey> publicKeys = jwePublicKeys();
+
+        assertThat(publicKeys).hasSize(2);
+        assertThat(publicKeys.get(0).getKeyID()).isEqualTo("jme-jwe-scs-key:2");
+        assertThat(publicKeys.get(1).getKeyID()).isEqualTo("jme-jwe-scs-key:1");
+    }
+
+    @Test
+    void encryptedGetWithPreviousKeyVersionStillWorks() throws Exception {
+        // Rotation grace: a client that still encrypts with the previous key version (e.g. with a
+        // cached JWKS from before a key rotation) is still served.
+        RSAKey previousKey = jwePublicKeys().get(1);
+        SecretKey responseCek = aes256();
+
+        ResponseEntity<byte[]> response = client().get().uri("/api/persons")
+                .header(HEADER_AUTHORIZATION, BEARER_PREFIX + token(ROLE_PERSON_READ))
+                .header(HEADER_ACCEPT, APPLICATION_JOSE)
+                .header(HEADER_RESPONSE_KEY, responseKeyEnvelope(previousKey, responseCek))
+                .retrieve().toEntity(byte[].class);
+
+        assertThat(contentType(response)).isEqualTo(APPLICATION_JOSE);
+        assertThat(decrypt(response.getBody(), responseCek)).contains("Muster");
+    }
+
     // --- Helpers ----------------------------------------------------------------------------------
 
     private String token(String... userRoles) {
@@ -219,8 +252,14 @@ class JweScsIntegrationTest {
     }
 
     private RSAKey jwePublicKey() throws Exception {
+        return jwePublicKeys().get(0);
+    }
+
+    private List<RSAKey> jwePublicKeys() throws Exception {
         String jwks = client().get().uri(JWE_JWKS_PATH).retrieve().toEntity(String.class).getBody();
-        return JWKSet.parse(Objects.requireNonNull(jwks)).getKeys().get(0).toRSAKey();
+        return JWKSet.parse(Objects.requireNonNull(jwks)).getKeys().stream()
+                .map(key -> (RSAKey) key)
+                .toList();
     }
 
     private static SecretKey aes256() throws Exception {
