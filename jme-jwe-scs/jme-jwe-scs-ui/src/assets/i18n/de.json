@@ -8,7 +8,10 @@
 		},
 		"home": {
 			"title": "jEAP JWE Beispiel",
-			"intro": "Angemeldet als <strong>{{username}}</strong>. Alle untenstehenden Requests werden mit einem OAuth2 Bearer Token gesendet. Öffnen Sie den Netzwerk-Tab des Browsers, um zu sehen, welche Requests und Responses als <code>application/jose</code> (verschlüsselt) und welche als <code>application/json</code> (Klartext) übertragen werden.",
+			"intro": {
+				"loggedInAs": "Angemeldet als",
+				"details": "Alle untenstehenden Requests werden mit einem OAuth2 Bearer Token gesendet. Öffnen Sie den Netzwerk-Tab des Browsers, um zu sehen, welche Requests und Responses als <code>application/jose</code> (verschlüsselt) und welche als <code>application/json</code> (Klartext) übertragen werden."
+			},
 			"table": {
 				"firstName": "Vorname",
 				"lastName": "Nachname",

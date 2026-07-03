@@ -8,7 +8,10 @@
 		},
 		"home": {
 			"title": "Esempio jEAP JWE",
-			"intro": "Collegato come <strong>{{username}}</strong>. Tutte le richieste sottostanti vengono inviate con un token OAuth2 Bearer. Aprire la scheda di rete del browser per vedere quali richieste e risposte vengono trasmesse come <code>application/jose</code> (cifrato) e quali come <code>application/json</code> (testo in chiaro).",
+			"intro": {
+				"loggedInAs": "Collegato come",
+				"details": "Tutte le richieste sottostanti vengono inviate con un token OAuth2 Bearer. Aprire la scheda di rete del browser per vedere quali richieste e risposte vengono trasmesse come <code>application/jose</code> (cifrato) e quali come <code>application/json</code> (testo in chiaro)."
+			},
 			"table": {
 				"firstName": "Nome",
 				"lastName": "Cognome",

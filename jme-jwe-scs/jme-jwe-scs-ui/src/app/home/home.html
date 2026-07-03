@@ -1,6 +1,9 @@
 <h1>{{ "jwe.home.title" | translate }}</h1>
 
-<p [innerHTML]="'jwe.home.intro' | translate: { username: username }"></p>
+<p>
+	{{ "jwe.home.intro.loggedInAs" | translate }} <strong>{{ username }}</strong>.
+	<span [innerHTML]="'jwe.home.intro.details' | translate"></span>
+</p>
 
 @if (error()) {
 	<div class="ob-alert ob-alert-error" role="alert">{{ error() }}</div>

@@ -8,7 +8,10 @@
 		},
 		"home": {
 			"title": "Exemple jEAP JWE",
-			"intro": "Connecté en tant que <strong>{{username}}</strong>. Toutes les requêtes ci-dessous sont envoyées avec un jeton OAuth2 Bearer. Ouvrez l'onglet réseau du navigateur pour voir quelles requêtes et réponses sont transmises en <code>application/jose</code> (chiffré) et lesquelles en <code>application/json</code> (texte clair).",
+			"intro": {
+				"loggedInAs": "Connecté en tant que",
+				"details": "Toutes les requêtes ci-dessous sont envoyées avec un jeton OAuth2 Bearer. Ouvrez l'onglet réseau du navigateur pour voir quelles requêtes et réponses sont transmises en <code>application/jose</code> (chiffré) et lesquelles en <code>application/json</code> (texte clair)."
+			},
 			"table": {
 				"firstName": "Prénom",
 				"lastName": "Nom",
