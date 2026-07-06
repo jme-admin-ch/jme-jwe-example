@@ -54,5 +54,10 @@
     "jest-environment-jsdom": "^30.0.0",
     "prettier": "^3.8.1",
     "typescript": "~5.9.2"
+  },
+  "overrides": {
+    "@angular/compiler-cli": {
+      "@babel/core": "~7.29.7"
+    }
   }
 }
