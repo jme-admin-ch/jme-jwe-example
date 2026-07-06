@@ -13,11 +13,12 @@ The relevant integration points:
 * [`person.service.ts`](src/app/person/person.service.ts): plain `HttpClient` calls — the JWE
   interceptor transparently encrypts/decrypts everything matching the backend's included paths.
 
-Note the explicit `include`/`exclude` patterns passed to `provideJeapJweClient`: the interceptor
-evaluates the *local* configuration as a first gate before the backend configuration has been
-loaded, and the library default include (`/*api*/**`) does not match paths under a servlet
-context path. When the backend runs under a context path (here `/jme-jwe-scs`), the local
-patterns must mirror the backend's context-path-prefixed included and excluded paths.
+No local `include`/`exclude` patterns are needed: the backend-published, context-path-prefixed
+included and excluded paths are the source of truth for the protect/skip decision, and requests
+to the backend origin wait for that configuration instead of being decided locally. Only
+`jweConfigPath` is set explicitly — the library derives its default from the base href, which is
+the context path (`/jme-jwe-scs/`) in the production build but `/` under `ng serve`, where the
+discovery endpoint is reached through the dev proxy instead.
 
 The Maven build (see [`pom.xml`](pom.xml)) runs the frontend tests and the production build via
 npm and writes the output to `target/classes/static`, so the frontend is packaged into a jar the

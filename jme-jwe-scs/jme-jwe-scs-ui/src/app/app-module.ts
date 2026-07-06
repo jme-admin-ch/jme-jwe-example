@@ -64,16 +64,12 @@ registerLocaleData(localeITCH);
 			hasLanguageInUrl: false
 		}),
 		// Transparent JWE encryption: the backend publishes its JWE configuration (JWKS path,
-		// included/excluded paths) at /.well-known/jwe-configuration, the interceptor mirrors it.
-		// The local include/exclude patterns must mirror the backend's context-path-prefixed
-		// paths: the interceptor evaluates the local configuration as a first gate before the
-		// backend configuration is loaded, and the library default (/*api*/**) does not match
-		// paths under a servlet context path like /jme-jwe-scs/api/**.
+		// context-path-prefixed included/excluded paths) at /.well-known/jwe-configuration and
+		// the interceptor mirrors it, so no local include/exclude patterns are needed. Only the
+		// discovery path is set explicitly: the default is derived from the base href, which is
+		// the context path in the production build but "/" under `ng serve` with the dev proxy.
 		provideJeapJweClient({
-			origin: globalThis.location.origin,
-			jweConfigPath: `${CONTEXT_PATH}/.well-known/jwe-configuration`,
-			include: [`${CONTEXT_PATH}/api/**`],
-			exclude: [`${CONTEXT_PATH}/api/public/**`]
+			jweConfigPath: `${CONTEXT_PATH}/.well-known/jwe-configuration`
 		}),
 		{provide: HTTP_INTERCEPTORS, useClass: ObHttpApiInterceptor, multi: true},
 		provideHttpClient(withInterceptors([jeapJweInterceptor]), withInterceptorsFromDi()),

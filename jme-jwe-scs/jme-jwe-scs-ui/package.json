@@ -22,7 +22,7 @@
     "@angular/material": "^21.2.14",
     "@angular/platform-browser": "^21.2.0",
     "@angular/router": "^21.2.0",
-    "@jeap/jeap-jwe-client": "^1.1.0",
+    "@jeap/jeap-jwe-client": "^1.2.0",
     "@ngx-translate/core": "^17.0.0",
     "@oblique/oblique": "^15.4.0",
     "@popperjs/core": "^2.0.0",
