@@ -71,15 +71,15 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <!-- Attach the executable Spring Boot jar with the 'exec' classifier so the main
-                         artifact remains a plain library jar: downstream instances of this example
-                         (e.g. jme-nivel-jwe-example) depend on this module as a library and cannot
-                         load classes nested inside a repackaged fat jar. -->
-                    <classifier>exec</classifier>
-                </configuration>
                 <executions>
                     <execution>
+                        <!-- Skip repackaging to avoid building a fat jar: downstream instances of this
+                             example (e.g. jme-nivel-jwe-example) depend on this module as a library and
+                             cannot load classes nested inside a repackaged executable jar -->
+                        <phase>none</phase>
+                    </execution>
+                    <execution>
+                        <id>spring-boot</id>
                         <goals>
                             <goal>build-info</goal>
                         </goals>

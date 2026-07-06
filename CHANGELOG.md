@@ -9,10 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- jme-jwe-scs-web is now published as a plain library jar; the executable Spring Boot jar is attached
-  with the `exec` classifier. This allows downstream instances of this example (e.g.
-  jme-nivel-jwe-example) to depend on the module as a library — classes inside a repackaged fat jar
-  cannot be loaded as a dependency.
+- jme-jwe-scs-web is now published as a plain library jar (Spring Boot repackaging skipped, like in
+  jme-jwe-auth-scs and the process context example). This allows downstream instances of this example
+  (e.g. jme-nivel-jwe-example) to depend on the module as a library — classes inside a repackaged fat
+  jar cannot be loaded as a dependency.
 
 ## [1.1.0] - 2026-07-06
 
