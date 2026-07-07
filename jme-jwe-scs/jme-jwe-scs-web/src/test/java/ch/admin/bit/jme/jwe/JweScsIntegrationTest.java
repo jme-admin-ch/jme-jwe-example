@@ -44,6 +44,9 @@ import static org.assertj.core.api.Assertions.catchThrowableOfType;
  * </ul>
  * The full Docker Compose setup with Vault is covered by the {@code jme-jwe-test} module.
  *
+ * <p>Additionally verifies that the SPA's {@code index.html} is served with the
+ * {@code <base href>} rewritten to the servlet context path (see {@code IndexHtmlController}).
+ *
  * <p>The JWE JWKS endpoint is moved to {@code /.well-known/jwe-jwks.json} for this test because
  * the jeap-security test support serves its token-signing JWKS at {@code /.well-known/jwks.json},
  * which would collide with the JWE JWKS endpoint's default path.
@@ -209,6 +212,28 @@ class JweScsIntegrationTest {
                 .retrieve().toBodilessEntity().getStatusCode().value()).isEqualTo(200);
         assertThat(client().get().uri("/.well-known/jwe-configuration")
                 .retrieve().toBodilessEntity().getStatusCode().value()).isEqualTo(200);
+    }
+
+    // --- SPA frontend -----------------------------------------------------------------------------
+
+    @Test
+    void indexHtmlIsServedWithTheContextPathAsBaseHref() {
+        ResponseEntity<String> response = client().get().uri("/")
+                .retrieve().toEntity(String.class);
+
+        assertThat(response.getStatusCode().value()).isEqualTo(200);
+        assertThat(Objects.requireNonNull(response.getHeaders().getContentType()).toString())
+                .startsWith("text/html");
+        assertThat(response.getBody()).contains("<base href=\"/jme-jwe-scs/\"");
+    }
+
+    @Test
+    void spaRouteIsForwardedToIndexHtmlWithTheContextPathAsBaseHref() {
+        ResponseEntity<String> response = client().get().uri("/persons/edit/42")
+                .retrieve().toEntity(String.class);
+
+        assertThat(response.getStatusCode().value()).isEqualTo(200);
+        assertThat(response.getBody()).contains("<base href=\"/jme-jwe-scs/\"");
     }
 
     // --- Multiple key versions ---------------------------------------------------------------------

@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.1] - 2026-07-07
+
+### Fixed
+
+- The frontend no longer hardcodes the /jme-jwe-scs context path: index.html is served with the
+  `<base href>` rewritten to the servlet context path, and the frontend derives its API paths from
+  the base href. This fixes the broken static resource loading (403) in downstream instances of this
+  example that run under a different context path (e.g. jme-nivel-jwe-example, jme-rhos-jwe-example).
+
 ## [1.2.0] - 2026-07-06
 
 ### Changed
