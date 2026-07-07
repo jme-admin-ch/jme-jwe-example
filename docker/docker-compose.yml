@@ -5,7 +5,7 @@ services:
   ############################################
 
   vault:
-    image: hashicorp/vault:1.21.4
+    image: hashicorp/vault:2.0.3
     ports:
       # Published on 8201 to avoid clashing with other locally running Vault instances
       - "8201:8200"
@@ -26,7 +26,7 @@ services:
   # version but still decrypts payloads encrypted with the previous version (rotation grace),
   # and the JWKS endpoint serves both public keys.
   vault_init:
-    image: hashicorp/vault:1.21.4
+    image: hashicorp/vault:2.0.3
     depends_on:
       vault:
         condition: service_healthy
