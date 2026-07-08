@@ -49,6 +49,7 @@ Changes are documented in [CHANGELOG.md](CHANGELOG.md).
 - JDK 25 or later
 - Docker (for Vault)
 - Node.js 22 / npm (only needed to run the frontend independently with `ng serve`)
+- Google Chrome (used headless by the browser-based integration test in `jme-jwe-test`)
 - Use the maven wrapper `./mvnw` to build the project
 
 ## Getting started
@@ -108,11 +109,23 @@ Vault-backed keys: encrypted POST, encrypted GET, the unencrypted allowlisted re
 rejection, the JWKS endpoint serving both Vault transit key versions (newest first), and the
 rotation grace — an encrypted request using the previous key version is still accepted.
 
+The module also contains a browser-based end-to-end test (`JweExampleBrowserIT`) that drives the
+real Angular UI in headless Chrome with [Playwright](https://playwright.dev/java/): it logs in
+through the OAuth mock server's login page (authorization code flow with PKCE, exactly as a user
+would) and then asserts on the captured network traffic that `/api/persons` is transported as
+`application/jose` (request body encrypted in the browser, response a compact JWE) while the
+allowlisted `/api/public/info` stays plain `application/json`. Playwright uses the locally
+installed Google Chrome (`chrome` channel), so no browser download is required.
+
 ```shell
-# Build and install all local modules
+# Build and install all local modules (required: the services are forked from the local build)
 ./mvnw install -pl '!:jme-jwe-test'
-# Run integration tests
+# Run all integration tests
 ./mvnw verify -pl jme-jwe-test
+# Run only the browser-based test
+./mvnw verify -pl jme-jwe-test -Dit.test=JweExampleBrowserIT
+# Skip the integration tests in a full build
+./mvnw install -Dskip.failsafe.tests=true
 ```
 
 Ensure Docker is running and the ports 8080, 8081 and 8201 are available.
