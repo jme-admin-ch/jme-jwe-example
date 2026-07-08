@@ -6,6 +6,9 @@
 		"footer": {
 			"info": "© {{year}} Bundesamt für Informatik und Telekommunikation BIT"
 		},
+		"nav": {
+			"decrypt": "JWE entschlüsseln"
+		},
 		"home": {
 			"title": "jEAP JWE Beispiel",
 			"intro": {
@@ -40,6 +43,37 @@
 				"loadPersons": "Laden der Personen fehlgeschlagen: {{message}}",
 				"createPerson": "Erstellen der Person fehlgeschlagen: {{message}}",
 				"loadPublicInfo": "Laden der Public Info fehlgeschlagen: {{message}}"
+			}
+		},
+		"decrypt": {
+			"title": "JWE entschlüsseln (Demo)",
+			"intro": "Kopieren Sie ein Compact JWE aus dem Netzwerk-Tab des Browsers und lassen Sie es vom Backend mit dessen privaten Schlüsseln entschlüsseln: den <code>application/jose</code> Request-Body eines <code>POST /api/persons</code>, den Wert des <code>JWE-Response-Key</code> Headers — oder eine verschlüsselte Response zusammen mit dem <code>JWE-Response-Key</code> Header ihres Requests.",
+			"demoWarning": "<strong>Nur zu Demonstrationszwecken:</strong> Dieser Endpoint ist bewusst ein Entschlüsselungs-Orakel und gehört in keine produktive Anwendung.",
+			"input": {
+				"title": "Verschlüsseltes JWE",
+				"subtitle": "POST /api/demo/decrypt — Request und Response selbst JWE-verschlüsselt übertragen",
+				"label": "Compact JWE (ey…)",
+				"responseKeyLabel": "JWE-Response-Key Header (optional)",
+				"responseKeyHint": "Nur für Response-JWEs (alg dir) nötig: der JWE-Response-Key Header desselben Requests."
+			},
+			"button": "Entschlüsseln",
+			"legend": {
+				"header": "Protected Header",
+				"encryptedKey": "Encrypted Key",
+				"iv": "Initialization Vector",
+				"ciphertext": "Ciphertext",
+				"tag": "Authentication Tag"
+			},
+			"result": {
+				"headerTitle": "Protected Header",
+				"headerSubtitle": "Base64URL-dekodiert — für jedermann lesbar, aber integritätsgeschützt",
+				"payloadTitle": "Entschlüsselter Inhalt",
+				"payloadSubtitle": "Vom Backend mit seinem privaten Schlüssel entschlüsselt",
+				"payloadBinary": "Der Inhalt ist binär (z. B. ein AES-Schlüssel aus einem JWE-Response-Key Envelope) und wird Base64-kodiert angezeigt:"
+			},
+			"error": {
+				"failed": "Entschlüsselung fehlgeschlagen ({{reason}}): {{message}}",
+				"responseJweHint": "Das ist eine verschlüsselte <em>Response</em> (<code>alg: dir</code>): Sie wurde mit dem request-lokalen Schlüssel verschlüsselt, den nur Ihr Browser kannte. Fügen Sie zusätzlich den Wert des <code>JWE-Response-Key</code> Headers desselben Requests in das optionale Feld ein — das Backend packt daraus den Schlüssel aus und entschlüsselt die Response."
 			}
 		}
 	}

@@ -1,0 +1,91 @@
+.jwe-decrypt-cards {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.jwe-input-field {
+	width: 100%;
+}
+
+.jwe-input {
+	font-family: monospace;
+}
+
+// Colored breakdown of the pasted JWE into its five compact-serialization segments
+.jwe-parts {
+	background: #f5f5f5;
+	border-radius: 0.25rem;
+	padding: 0.75rem;
+	font-family: monospace;
+	white-space: pre-wrap;
+	word-break: break-all;
+	max-height: 16rem;
+	overflow: auto;
+}
+
+.jwe-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.jwe-legend-chip {
+	background: #f5f5f5;
+	border-radius: 1rem;
+	padding: 0.125rem 0.625rem;
+	font-size: 0.875rem;
+	font-weight: 500;
+}
+
+.jwe-part-header {
+	color: #7b1fa2;
+}
+
+.jwe-part-encryptedKey {
+	color: #1565c0;
+}
+
+.jwe-part-iv {
+	color: #00695c;
+}
+
+.jwe-part-ciphertext {
+	color: #b71c1c;
+}
+
+.jwe-part-tag {
+	color: #bf360c;
+}
+
+.jwe-part-dot {
+	font-weight: 700;
+}
+
+// Syntax-colored JSON (decrypted payload and protected header)
+.jwe-json {
+	background: #f5f5f5;
+	border-radius: 0.25rem;
+	padding: 0.75rem;
+	font-family: monospace;
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.jwe-json-key {
+	color: #6f42c1;
+}
+
+.jwe-json-string {
+	color: #032f62;
+}
+
+.jwe-json-number {
+	color: #005cc5;
+}
+
+.jwe-json-literal {
+	color: #d73a49;
+}

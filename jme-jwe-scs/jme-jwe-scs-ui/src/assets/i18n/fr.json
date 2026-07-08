@@ -6,6 +6,9 @@
 		"footer": {
 			"info": "© {{year}} Office fédéral de l'informatique et de la télécommunication OFIT"
 		},
+		"nav": {
+			"decrypt": "Déchiffrer un JWE"
+		},
 		"home": {
 			"title": "Exemple jEAP JWE",
 			"intro": {
@@ -40,6 +43,37 @@
 				"loadPersons": "Échec du chargement des personnes : {{message}}",
 				"createPerson": "Échec de la création de la personne : {{message}}",
 				"loadPublicInfo": "Échec du chargement des infos publiques : {{message}}"
+			}
+		},
+		"decrypt": {
+			"title": "Déchiffrer un JWE (démo)",
+			"intro": "Copiez un JWE compact depuis l'onglet réseau du navigateur et laissez le backend le déchiffrer avec ses clés privées : le corps <code>application/jose</code> d'une requête <code>POST /api/persons</code>, la valeur de l'en-tête <code>JWE-Response-Key</code> — ou une réponse chiffrée accompagnée de l'en-tête <code>JWE-Response-Key</code> de sa requête.",
+			"demoWarning": "<strong>À des fins de démonstration uniquement :</strong> cet endpoint est délibérément un oracle de déchiffrement et n'a pas sa place dans une application productive.",
+			"input": {
+				"title": "JWE chiffré",
+				"subtitle": "POST /api/demo/decrypt — requête et réponse elles-mêmes transmises chiffrées en JWE",
+				"label": "JWE compact (ey…)",
+				"responseKeyLabel": "En-tête JWE-Response-Key (facultatif)",
+				"responseKeyHint": "Nécessaire uniquement pour les JWE de réponse (alg dir) : l'en-tête JWE-Response-Key de la même requête."
+			},
+			"button": "Déchiffrer",
+			"legend": {
+				"header": "Protected Header",
+				"encryptedKey": "Encrypted Key",
+				"iv": "Initialization Vector",
+				"ciphertext": "Ciphertext",
+				"tag": "Authentication Tag"
+			},
+			"result": {
+				"headerTitle": "Protected Header",
+				"headerSubtitle": "Décodé de Base64URL — lisible par tous, mais protégé en intégrité",
+				"payloadTitle": "Contenu déchiffré",
+				"payloadSubtitle": "Déchiffré par le backend avec sa clé privée",
+				"payloadBinary": "Le contenu est binaire (p. ex. une clé AES d'une enveloppe JWE-Response-Key) et est affiché encodé en Base64 :"
+			},
+			"error": {
+				"failed": "Échec du déchiffrement ({{reason}}) : {{message}}",
+				"responseJweHint": "Il s'agit d'une <em>réponse</em> chiffrée (<code>alg: dir</code>) : elle a été chiffrée avec la clé locale à la requête que seul votre navigateur connaissait. Collez en plus la valeur de l'en-tête <code>JWE-Response-Key</code> de la même requête dans le champ facultatif — le backend en extraira la clé et déchiffrera la réponse."
 			}
 		}
 	}

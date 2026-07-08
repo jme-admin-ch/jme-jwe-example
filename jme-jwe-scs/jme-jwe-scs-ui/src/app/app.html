@@ -1,4 +1,9 @@
-<ob-master-layout [navigation]="[{ url: 'home', label: 'i18n.oblique.header.navigation.home', icon: 'home' }]">
+<ob-master-layout
+	[navigation]="[
+		{ url: 'home', label: 'i18n.oblique.header.navigation.home', icon: 'home' },
+		{ url: 'decrypt', label: 'jwe.nav.decrypt', icon: 'lock_open' },
+	]"
+>
 	<ng-container obHeaderTitle>{{ "jwe.header.title" | translate }}</ng-container>
 	<ng-container obFooterInfo>
 		<p>{{ "jwe.footer.info" | translate: { year: year() } }}</p>

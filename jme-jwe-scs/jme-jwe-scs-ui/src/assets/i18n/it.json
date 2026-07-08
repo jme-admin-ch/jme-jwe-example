@@ -6,6 +6,9 @@
 		"footer": {
 			"info": "© {{year}} Ufficio federale dell'informatica e della telecomunicazione UFIT"
 		},
+		"nav": {
+			"decrypt": "Decifrare un JWE"
+		},
 		"home": {
 			"title": "Esempio jEAP JWE",
 			"intro": {
@@ -40,6 +43,37 @@
 				"loadPersons": "Caricamento delle persone non riuscito: {{message}}",
 				"createPerson": "Creazione della persona non riuscita: {{message}}",
 				"loadPublicInfo": "Caricamento delle info pubbliche non riuscito: {{message}}"
+			}
+		},
+		"decrypt": {
+			"title": "Decifrare un JWE (demo)",
+			"intro": "Copiare un JWE compatto dalla scheda di rete del browser e lasciare che il backend lo decifri con le sue chiavi private: il corpo <code>application/jose</code> di una richiesta <code>POST /api/persons</code>, il valore dell'header <code>JWE-Response-Key</code> — oppure una risposta cifrata insieme all'header <code>JWE-Response-Key</code> della sua richiesta.",
+			"demoWarning": "<strong>Solo a scopo dimostrativo:</strong> questo endpoint è volutamente un oracolo di decifratura e non ha posto in un'applicazione produttiva.",
+			"input": {
+				"title": "JWE cifrato",
+				"subtitle": "POST /api/demo/decrypt — richiesta e risposta trasmesse a loro volta cifrate come JWE",
+				"label": "JWE compatto (ey…)",
+				"responseKeyLabel": "Header JWE-Response-Key (facoltativo)",
+				"responseKeyHint": "Necessario solo per i JWE di risposta (alg dir): l'header JWE-Response-Key della stessa richiesta."
+			},
+			"button": "Decifra",
+			"legend": {
+				"header": "Protected Header",
+				"encryptedKey": "Encrypted Key",
+				"iv": "Initialization Vector",
+				"ciphertext": "Ciphertext",
+				"tag": "Authentication Tag"
+			},
+			"result": {
+				"headerTitle": "Protected Header",
+				"headerSubtitle": "Decodificato da Base64URL — leggibile da chiunque, ma protetto nell'integrità",
+				"payloadTitle": "Contenuto decifrato",
+				"payloadSubtitle": "Decifrato dal backend con la sua chiave privata",
+				"payloadBinary": "Il contenuto è binario (ad es. una chiave AES di una busta JWE-Response-Key) e viene mostrato codificato in Base64:"
+			},
+			"error": {
+				"failed": "Decifratura non riuscita ({{reason}}): {{message}}",
+				"responseJweHint": "Questa è una <em>risposta</em> cifrata (<code>alg: dir</code>): è stata cifrata con la chiave locale alla richiesta nota solo al vostro browser. Incollare inoltre il valore dell'header <code>JWE-Response-Key</code> della stessa richiesta nel campo facoltativo — il backend ne estrarrà la chiave e decifrerà la risposta."
 			}
 		}
 	}

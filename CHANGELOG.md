@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   headless Chrome with Playwright, logs in through the OAuth mock server and verifies on the wire
   that the encrypted endpoints transport `application/jose` while the allowlisted endpoint stays
   plain JSON.
+- "Decrypt JWE" demo view: a new Angular route where a compact JWE captured from the network tab
+  can be pasted and decrypted by the backend (`POST /api/demo/decrypt`), displaying the colored
+  JWE segments, the protected header and the recovered plaintext. Response JWEs (`alg: dir`) are
+  decrypted by additionally supplying the `JWE-Response-Key` header of the same request, from
+  which the backend recovers the response CEK. Strictly a demo feature — the endpoint is a
+  deliberate decryption oracle. Covered by the module and browser integration tests.
 
 ## [1.3.0] - 2026-07-08
 

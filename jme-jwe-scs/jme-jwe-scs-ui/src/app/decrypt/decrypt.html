@@ -1,0 +1,93 @@
+<h1>{{ "jwe.decrypt.title" | translate }}</h1>
+
+<p [innerHTML]="'jwe.decrypt.intro' | translate"></p>
+
+<div class="ob-alert ob-alert-warning" role="note" [innerHTML]="'jwe.decrypt.demoWarning' | translate"></div>
+
+<div class="jwe-decrypt-cards">
+	<mat-card appearance="outlined">
+		<mat-card-header>
+			<mat-card-title>{{ "jwe.decrypt.input.title" | translate }}</mat-card-title>
+			<mat-card-subtitle>{{ "jwe.decrypt.input.subtitle" | translate }}</mat-card-subtitle>
+		</mat-card-header>
+		<mat-card-content>
+			<mat-form-field class="jwe-input-field">
+				<mat-label>{{ "jwe.decrypt.input.label" | translate }}</mat-label>
+				<textarea matInput [formControl]="jweControl" rows="6" required spellcheck="false" class="jwe-input"></textarea>
+			</mat-form-field>
+			@if (jweParts().length > 0) {
+				<div class="jwe-legend">
+					@for (type of partTypes; track type) {
+						<span class="jwe-legend-chip" [class]="'jwe-part-' + type">{{ "jwe.decrypt.legend." + type | translate }}</span>
+					}
+				</div>
+				<pre class="jwe-parts" data-testid="jwe-parts">@for (part of jweParts(); track $index; let last = $last) {<span
+						[class]="'jwe-part-' + part.type"
+					>{{ part.text }}</span>@if (!last) {<span class="jwe-part-dot">.</span>}}</pre>
+			}
+			<mat-form-field class="jwe-input-field">
+				<mat-label>{{ "jwe.decrypt.input.responseKeyLabel" | translate }}</mat-label>
+				<textarea matInput [formControl]="responseKeyControl" rows="3" spellcheck="false" class="jwe-response-key-input"></textarea>
+				<mat-hint>{{ "jwe.decrypt.input.responseKeyHint" | translate }}</mat-hint>
+			</mat-form-field>
+		</mat-card-content>
+		<mat-card-actions>
+			<button type="button" mat-button obButton="primary" [disabled]="jweControl.invalid" (click)="decrypt()">
+				{{ "jwe.decrypt.button" | translate }}
+			</button>
+		</mat-card-actions>
+	</mat-card>
+
+	@if (error(); as decryptError) {
+		<div class="ob-alert ob-alert-error" role="alert">
+			{{ "jwe.decrypt.error.failed" | translate: { reason: decryptError.reason, message: decryptError.message } }}
+		</div>
+		@if (needsResponseKey()) {
+			<div class="ob-alert ob-alert-info" role="note" [innerHTML]="'jwe.decrypt.error.responseJweHint' | translate"></div>
+		}
+		@if (errorHeaderTokens().length > 0) {
+			<mat-card appearance="outlined">
+				<mat-card-header>
+					<mat-card-title>{{ "jwe.decrypt.result.headerTitle" | translate }}</mat-card-title>
+					<mat-card-subtitle>{{ "jwe.decrypt.result.headerSubtitle" | translate }}</mat-card-subtitle>
+				</mat-card-header>
+				<mat-card-content>
+					<pre
+						class="jwe-json jwe-header-json"
+					>@for (token of errorHeaderTokens(); track $index) {<span [class]="'jwe-json-' + token.type">{{ token.text }}</span>}</pre>
+				</mat-card-content>
+			</mat-card>
+		}
+	}
+
+	@if (result(); as decrypted) {
+		<mat-card appearance="outlined">
+			<mat-card-header>
+				<mat-card-title>{{ "jwe.decrypt.result.headerTitle" | translate }}</mat-card-title>
+				<mat-card-subtitle>{{ "jwe.decrypt.result.headerSubtitle" | translate }}</mat-card-subtitle>
+			</mat-card-header>
+			<mat-card-content>
+				<pre
+					class="jwe-json jwe-header-json"
+				>@for (token of headerTokens(); track $index) {<span [class]="'jwe-json-' + token.type">{{ token.text }}</span>}</pre>
+			</mat-card-content>
+		</mat-card>
+
+		<mat-card appearance="outlined">
+			<mat-card-header>
+				<mat-card-title>{{ "jwe.decrypt.result.payloadTitle" | translate }}</mat-card-title>
+				<mat-card-subtitle>{{ "jwe.decrypt.result.payloadSubtitle" | translate }}</mat-card-subtitle>
+			</mat-card-header>
+			<mat-card-content>
+				@if (decrypted.payloadText !== null) {
+					<pre
+						class="jwe-json jwe-payload"
+					>@for (token of payloadTokens(); track $index) {<span [class]="'jwe-json-' + token.type">{{ token.text }}</span>}</pre>
+				} @else {
+					<p>{{ "jwe.decrypt.result.payloadBinary" | translate }}</p>
+					<pre class="jwe-json jwe-payload">{{ decrypted.payloadBase64 }}</pre>
+				}
+			</mat-card-content>
+		</mat-card>
+	}
+</div>

@@ -24,12 +24,23 @@ The example is a self-contained system (SCS) and consists of the following modul
 | Encrypted POST | `POST /api/persons` | Request body encrypted as compact JWE (`application/jose`), response encrypted with the request-local response key |
 | Encrypted GET | `GET /api/persons` | Response encrypted with the key from the `JWE-Response-Key` header |
 | Unencrypted request with allowlist | `GET /api/public/info` | Plain JSON — `/api/public/**` is listed in `jeap.jwe.filter.excluded-paths`, but the endpoint still requires a valid Bearer token |
+| Decrypt demo view | `POST /api/demo/decrypt` | Paste a captured request JWE and see its protected header and decrypted payload — the decrypt round trip itself travels encrypted |
 
 Encryption and decryption are transparent on both sides: the Spring controllers only see plain
 JSON, and the Angular services use the ordinary `HttpClient`. The jEAP JWE servlet filter and the
 `jeapJweInterceptor` handle the JWE protocol, driven by the configuration the backend publishes at
 `/.well-known/jwe-configuration` (see `jeap.jwe.*` in
 [`application.yml`](jme-jwe-scs/jme-jwe-scs-web/src/main/resources/application.yml)).
+
+The "Decrypt JWE" view is strictly a demo feature: paste a compact JWE captured from the
+browser's network tab (e.g. the `application/jose` request body of an encrypted POST, or the
+`JWE-Response-Key` header value) and the backend decrypts it with its private keys, so the UI can
+display the colored JWE segments, the protected header and the recovered plaintext. The endpoint
+is a deliberate decryption oracle and must never appear in a production application. Response
+JWEs (`alg: dir`) are encrypted with the request-local CEK the backend never retains, so they can
+only be decrypted by additionally pasting the `JWE-Response-Key` header value of the same request:
+the backend unwraps that envelope with its private key to recover the CEK — the same handshake
+the JWE servlet filter performs when encrypting a response.
 
 Key management is backed by the HashiCorp Vault transit secret engine: the Docker Compose setup
 creates an exportable `rsa-4096` transit key and rotates it once (see
@@ -114,7 +125,9 @@ real Angular UI in headless Chrome with [Playwright](https://playwright.dev/java
 through the OAuth mock server's login page (authorization code flow with PKCE, exactly as a user
 would) and then asserts on the captured network traffic that `/api/persons` is transported as
 `application/jose` (request body encrypted in the browser, response a compact JWE) while the
-allowlisted `/api/public/info` stays plain `application/json`. Playwright uses the locally
+allowlisted `/api/public/info` stays plain `application/json`. It also drives the decrypt demo
+view: a request JWE captured from the traffic is pasted, decrypted by the backend and displayed,
+while the decrypt round trip itself stays encrypted on the wire. Playwright uses the locally
 installed Google Chrome (`chrome` channel), so no browser download is required.
 
 ```shell

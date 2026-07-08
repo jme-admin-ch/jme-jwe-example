@@ -14,6 +14,7 @@ import {jeapJweInterceptor, provideJeapJweClient} from '@jeap/jeap-jwe-client';
 import {OAuthModule} from 'angular-oauth2-oidc';
 import {ReactiveFormsModule} from '@angular/forms';
 import {Home} from './home/home';
+import {Decrypt} from './decrypt/decrypt';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
@@ -27,7 +28,7 @@ registerLocaleData(localeFRCH);
 registerLocaleData(localeITCH);
 
 @NgModule({
-	declarations: [App, Home],
+	declarations: [App, Home, Decrypt],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,

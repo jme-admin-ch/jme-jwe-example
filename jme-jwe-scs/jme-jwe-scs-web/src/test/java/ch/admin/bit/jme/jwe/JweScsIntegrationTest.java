@@ -11,6 +11,7 @@ import com.nimbusds.jose.JWEHeader;
 import com.nimbusds.jose.JWEObject;
 import com.nimbusds.jose.Payload;
 import com.nimbusds.jose.crypto.DirectDecrypter;
+import com.nimbusds.jose.crypto.DirectEncrypter;
 import com.nimbusds.jose.crypto.RSAEncrypter;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
@@ -150,6 +151,92 @@ class JweScsIntegrationTest {
                 () -> client().get().uri("/api/public/info").retrieve().toBodilessEntity());
 
         assertThat(ex.getStatusCode().value()).isEqualTo(401);
+    }
+
+    // --- Demo decrypt endpoint ----------------------------------------------------------------------
+
+    @Test
+    void decryptDemoEndpointRevealsHeaderAndPayloadOfACapturedRequestJwe() throws Exception {
+        RSAKey publicKey = jwePublicKey();
+        SecretKey responseCek = aes256();
+        // A captured request JWE, as one would copy it from the browser's network tab
+        String capturedRequestJwe = encryptRequest(publicKey, "{\"firstName\":\"Demo\",\"ahvNumber\":\"756.0000.0000.00\"}");
+
+        ResponseEntity<byte[]> response = client().post().uri("/api/demo/decrypt")
+                .header(HEADER_AUTHORIZATION, BEARER_PREFIX + token(ROLE_PERSON_READ))
+                .header(HEADER_CONTENT_TYPE, APPLICATION_JOSE)
+                .header(HEADER_ACCEPT, APPLICATION_JOSE)
+                .header(HEADER_RESPONSE_KEY, responseKeyEnvelope(publicKey, responseCek))
+                .body(encryptRequest(publicKey, "{\"jwe\":\"" + capturedRequestJwe + "\"}").getBytes(US_ASCII))
+                .retrieve().toEntity(byte[].class);
+
+        // The demo endpoint lies within the included paths, so its response is encrypted as well
+        assertThat(response.getStatusCode().value()).isEqualTo(200);
+        assertThat(contentType(response)).isEqualTo(APPLICATION_JOSE);
+        String decrypted = decrypt(response.getBody(), responseCek);
+        assertThat(decrypted)
+                .contains("\"kid\":\"" + publicKey.getKeyID() + "\"")
+                .contains("\"alg\":\"RSA-OAEP-256\"")
+                .contains("\\\"firstName\\\":\\\"Demo\\\"")
+                .contains("756.0000.0000.00");
+    }
+
+    @Test
+    void decryptDemoEndpointDecryptsAResponseJweWithItsResponseKeyEnvelope() throws Exception {
+        RSAKey publicKey = jwePublicKey();
+        // A real encrypted response, captured together with the JWE-Response-Key header that
+        // requested it — the envelope lets the backend recover the CEK the response was encrypted with
+        SecretKey personsCek = aes256();
+        String personsEnvelope = responseKeyEnvelope(publicKey, personsCek);
+        byte[] personsResponseJwe = client().get().uri("/api/persons")
+                .header(HEADER_AUTHORIZATION, BEARER_PREFIX + token(ROLE_PERSON_READ))
+                .header(HEADER_ACCEPT, APPLICATION_JOSE)
+                .header(HEADER_RESPONSE_KEY, personsEnvelope)
+                .retrieve().toEntity(byte[].class).getBody();
+
+        SecretKey demoCek = aes256();
+        String body = "{\"jwe\":\"" + new String(Objects.requireNonNull(personsResponseJwe), US_ASCII)
+                + "\",\"responseKeyEnvelope\":\"" + personsEnvelope + "\"}";
+        ResponseEntity<byte[]> response = client().post().uri("/api/demo/decrypt")
+                .header(HEADER_AUTHORIZATION, BEARER_PREFIX + token(ROLE_PERSON_READ))
+                .header(HEADER_CONTENT_TYPE, APPLICATION_JOSE)
+                .header(HEADER_ACCEPT, APPLICATION_JOSE)
+                .header(HEADER_RESPONSE_KEY, responseKeyEnvelope(publicKey, demoCek))
+                .body(encryptRequest(publicKey, body).getBytes(US_ASCII))
+                .retrieve().toEntity(byte[].class);
+
+        assertThat(response.getStatusCode().value()).isEqualTo(200);
+        assertThat(decrypt(response.getBody(), demoCek))
+                .contains("\"alg\":\"dir\"")
+                .contains("Muster");
+    }
+
+    @Test
+    void decryptDemoEndpointRequiresTheResponseKeyEnvelopeForResponseJwes() throws Exception {
+        RSAKey publicKey = jwePublicKey();
+        SecretKey responseCek = aes256();
+        // A response-style JWE: dir/A256GCM with a request-local CEK the backend never retains
+        JWEObject responseJwe = new JWEObject(
+                new JWEHeader.Builder(JWEAlgorithm.DIR, EncryptionMethod.A256GCM)
+                        .contentType(APPLICATION_JSON).build(),
+                new Payload("{\"secret\":true}"));
+        responseJwe.encrypt(new DirectEncrypter(aes256()));
+        String body = "{\"jwe\":\"" + responseJwe.serialize() + "\"}";
+
+        HttpClientErrorException ex = catchThrowableOfType(HttpClientErrorException.class,
+                () -> client().post().uri("/api/demo/decrypt")
+                        .header(HEADER_AUTHORIZATION, BEARER_PREFIX + token(ROLE_PERSON_READ))
+                        .header(HEADER_CONTENT_TYPE, APPLICATION_JOSE)
+                        .header(HEADER_ACCEPT, APPLICATION_JOSE)
+                        .header(HEADER_RESPONSE_KEY, responseKeyEnvelope(publicKey, responseCek))
+                        .body(encryptRequest(publicKey, body).getBytes(US_ASCII))
+                        .retrieve().toBodilessEntity());
+
+        // Error responses are never encrypted: plain JSON with the reason and the parsed header
+        assertThat(ex.getStatusCode().value()).isEqualTo(400);
+        assertThat(ex.getResponseBodyAsString())
+                .contains("\"reason\":\"RESPONSE_KEY_REQUIRED\"")
+                .contains("\"alg\":\"dir\"");
     }
 
     // --- Enforcement and authorization ------------------------------------------------------------
