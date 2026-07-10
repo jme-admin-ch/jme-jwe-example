@@ -184,6 +184,7 @@ Apache License Version 2.0
  * thymeleaf - [org.thymeleaf:thymeleaf](http://www.thymeleaf.org/thymeleaf-lib/thymeleaf)
  * thymeleaf-spring6 - [org.thymeleaf:thymeleaf-spring6](http://www.thymeleaf.org/thymeleaf-lib/thymeleaf-spring6)
  * unbescape - [org.unbescape:unbescape](http://www.unbescape.org)
+ * WireMock - [org.wiremock:wiremock-standalone](http://wiremock.org)
  * org.xmlunit:xmlunit-core - [org.xmlunit:xmlunit-core](https://www.xmlunit.org/)
  * SnakeYAML - [org.yaml:snakeyaml](https://bitbucket.org/snakeyaml/snakeyaml)
  * Amazon Corretto Crypto Provider - [software.amazon.cryptools:AmazonCorrettoCryptoProvider](https://github.com/corretto/amazon-corretto-crypto-provider)
