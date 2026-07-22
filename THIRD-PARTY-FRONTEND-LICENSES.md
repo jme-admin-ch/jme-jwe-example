@@ -783,6 +783,11 @@
     - version: 7.29.7
     - licenses: MIT
     - repository: https://github.com/babel/babel
+ - **[@bbc/apache2-license-checker@1.1.4](https://github.com/bbc/apache2-license-checker)**
+    - name: @bbc/apache2-license-checker
+    - version: 1.1.4
+    - licenses: Apache-2.0
+    - repository: https://github.com/bbc/apache2-license-checker
  - **[@bcoe/v8-coverage@0.2.3](https://github.com/demurgos/v8-coverage)**
     - name: @bcoe/v8-coverage
     - version: 0.2.3
@@ -2083,6 +2088,11 @@
     - version: 0.0.8
     - licenses: Apache-2.0
     - repository: https://github.com/mahdyar/ansi-html-community
+ - **[ansi-regex@0.2.1](https://github.com/sindresorhus/ansi-regex)**
+    - name: ansi-regex
+    - version: 0.2.1
+    - licenses: MIT
+    - repository: https://github.com/sindresorhus/ansi-regex
  - **[ansi-regex@5.0.1](https://github.com/chalk/ansi-regex)**
     - name: ansi-regex
     - version: 5.0.1
@@ -2093,6 +2103,11 @@
     - version: 6.2.2
     - licenses: MIT
     - repository: https://github.com/chalk/ansi-regex
+ - **[ansi-styles@1.1.0](https://github.com/sindresorhus/ansi-styles)**
+    - name: ansi-styles
+    - version: 1.1.0
+    - licenses: MIT
+    - repository: https://github.com/sindresorhus/ansi-styles
  - **[ansi-styles@3.2.1](https://github.com/chalk/ansi-styles)**
     - name: ansi-styles
     - version: 3.2.1
@@ -2373,6 +2388,11 @@
     - version: 1.0.30001800
     - licenses: CC-BY-4.0
     - repository: https://github.com/browserslist/caniuse-lite
+ - **[chalk@0.5.1](https://github.com/sindresorhus/chalk)**
+    - name: chalk
+    - version: 0.5.1
+    - licenses: MIT
+    - repository: https://github.com/sindresorhus/chalk
  - **[chalk@2.4.2](https://github.com/chalk/chalk)**
     - name: chalk
     - version: 2.4.2
@@ -2503,6 +2523,11 @@
     - version: 2.0.20
     - licenses: MIT
     - repository: https://github.com/jorgebucaran/colorette
+ - **[colors@1.4.0](https://github.com/Marak/colors.js)**
+    - name: colors
+    - version: 1.4.0
+    - licenses: MIT
+    - repository: https://github.com/Marak/colors.js
  - **[commander@2.20.3](https://github.com/tj/commander.js)**
     - name: commander
     - version: 2.20.3
@@ -3298,6 +3323,11 @@
     - version: 4.7.9
     - licenses: MIT
     - repository: https://github.com/handlebars-lang/handlebars.js
+ - **[has-ansi@0.1.0](https://github.com/sindresorhus/has-ansi)**
+    - name: has-ansi
+    - version: 0.1.0
+    - licenses: MIT
+    - repository: https://github.com/sindresorhus/has-ansi
  - **[has-flag@3.0.0](https://github.com/sindresorhus/has-flag)**
     - name: has-flag
     - version: 3.0.0
@@ -3963,6 +3993,11 @@
     - version: 25.0.1
     - licenses: BSD-3-Clause
     - repository: https://github.com/davglass/license-checker
+ - **[license-checker@8.0.4](https://github.com/davglass/license-checker)**
+    - name: license-checker
+    - version: 8.0.4
+    - licenses: BSD-3-Clause
+    - repository: https://github.com/davglass/license-checker
  - **[license-webpack-plugin@4.0.2](https://github.com/xz64/license-webpack-plugin)**
     - name: license-webpack-plugin
     - version: 4.0.2
@@ -4238,6 +4273,11 @@
     - version: 3.1.0
     - licenses: MIT
     - repository: https://github.com/isaacs/minizlib
+ - **[mkdirp@0.3.5](https://github.com/substack/node-mkdirp)**
+    - name: mkdirp
+    - version: 0.3.5
+    - licenses: MIT
+    - repository: https://github.com/substack/node-mkdirp
  - **[mkdirp@0.5.6](https://github.com/substack/node-mkdirp)**
     - name: mkdirp
     - version: 0.5.6
@@ -4348,6 +4388,11 @@
     - version: 2.0.50
     - licenses: MIT
     - repository: https://github.com/chicoxyzzy/node-releases
+ - **[nopt@2.2.1](https://github.com/isaacs/nopt)**
+    - name: nopt
+    - version: 2.2.1
+    - licenses: MIT
+    - repository: https://github.com/isaacs/nopt
  - **[nopt@4.0.3](https://github.com/npm/nopt)**
     - name: nopt
     - version: 4.0.3
@@ -5333,6 +5378,11 @@
     - version: 1.3.0
     - licenses: MIT
     - repository: https://github.com/nodejs/string_decoder
+ - **[strip-ansi@0.3.0](https://github.com/sindresorhus/strip-ansi)**
+    - name: strip-ansi
+    - version: 0.3.0
+    - licenses: MIT
+    - repository: https://github.com/sindresorhus/strip-ansi
  - **[strip-ansi@6.0.1](https://github.com/chalk/strip-ansi)**
     - name: strip-ansi
     - version: 6.0.1
@@ -5363,6 +5413,11 @@
     - version: 3.1.1
     - licenses: MIT
     - repository: https://github.com/sindresorhus/strip-json-comments
+ - **[supports-color@0.2.0](https://github.com/sindresorhus/supports-color)**
+    - name: supports-color
+    - version: 0.2.0
+    - licenses: MIT
+    - repository: https://github.com/sindresorhus/supports-color
  - **[supports-color@5.5.0](https://github.com/chalk/supports-color)**
     - name: supports-color
     - version: 5.5.0

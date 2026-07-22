@@ -1,6 +1,7 @@
 {
   "name": "jme-jwe-scs-ui",
   "version": "0.0.0",
+  "license": "Apache-2.0",
   "scripts": {
     "start": "ng serve",
     "build": "ng build",
@@ -10,6 +11,7 @@
     "format": "npm run lint -- --fix",
     "build-prod": "ng build --configuration production",
     "test:ci": "ng test --watch=false",
+    "check-licenses": "apache2-license-checker",
     "generateLicenseFile": "license-checker --customPath custom-license-md-format.json --markdown > ../../THIRD-PARTY-FRONTEND-LICENSES.md"
   },
   "private": true,
@@ -41,6 +43,7 @@
     "@angular-eslint/utils": "^21.0.0",
     "@angular/cli": "^21.2.18",
     "@angular/compiler-cli": "^21.2.0",
+    "@bbc/apache2-license-checker": "^1.1.4",
     "@oblique/toolchain": "^15.4.0",
     "@types/jest": "^30.0.0",
     "@typescript-eslint/eslint-plugin": "^8.30.1",

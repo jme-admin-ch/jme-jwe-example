@@ -1,0 +1,67 @@
+{
+  "exceptions": {
+    "jme-jwe-scs-ui@*": {
+      "reason": "Apache-2.0; this project itself, see LICENSE in the repository root"
+    },
+    "@csstools/color-helpers@5.1.0": {
+      "reason": "MIT-0; see: https://github.com/csstools/postcss-plugins"
+    },
+    "@csstools/color-helpers@6.1.0": {
+      "reason": "MIT-0; see: https://github.com/csstools/postcss-plugins"
+    },
+    "@csstools/css-syntax-patches-for-csstree@1.1.6": {
+      "reason": "MIT-0; see: https://github.com/csstools/postcss-plugins"
+    },
+    "argparse@*": {
+      "reason": "Python-2.0; Dev dependency, see: https://github.com/nodeca/argparse"
+    },
+    "caniuse-lite@*": {
+      "reason": "CC-BY-4.0; see: https://github.com/browserslist/caniuse-lite"
+    },
+    "chownr@*": {
+      "reason": "BlueOak-1.0.0; see: https://github.com/isaacs/chownr"
+    },
+    "glob@*": {
+      "reason": "BlueOak-1.0.0; see: https://github.com/isaacs/node-glob"
+    },
+    "isexe@*": {
+      "reason": "BlueOak-1.0.0; see: https://github.com/isaacs/isexe"
+    },
+    "jackspeak@*": {
+      "reason": "BlueOak-1.0.0; Dev dependency, see: https://github.com/isaacs/jackspeak"
+    },
+    "lru-cache@*": {
+      "reason": "BlueOak-1.0.0; see: https://github.com/isaacs/node-lru-cache"
+    },
+    "minimatch@*": {
+      "reason": "BlueOak-1.0.0; see: https://github.com/isaacs/minimatch"
+    },
+    "minipass@*": {
+      "reason": "BlueOak-1.0.0; see: https://github.com/isaacs/minipass"
+    },
+    "minipass-flush@*": {
+      "reason": "BlueOak-1.0.0; see: https://github.com/isaacs/minipass-flush"
+    },
+    "package-json-from-dist@*": {
+      "reason": "BlueOak-1.0.0; see: https://github.com/isaacs/package-json-from-dist"
+    },
+    "path-scurry@*": {
+      "reason": "BlueOak-1.0.0; see: https://github.com/isaacs/path-scurry"
+    },
+    "sax@*": {
+      "reason": "BlueOak-1.0.0; see: https://github.com/isaacs/sax-js"
+    },
+    "tar@*": {
+      "reason": "BlueOak-1.0.0; see: https://github.com/isaacs/node-tar"
+    },
+    "tslib@*": {
+      "reason": "0BSD; see: https://github.com/Microsoft/tslib"
+    },
+    "type-fest@*": {
+      "reason": "(MIT OR CC0-1.0); see: https://github.com/sindresorhus/type-fest"
+    },
+    "yallist@*": {
+      "reason": "BlueOak-1.0.0; see: https://github.com/isaacs/yallist"
+    }
+  }
+}
