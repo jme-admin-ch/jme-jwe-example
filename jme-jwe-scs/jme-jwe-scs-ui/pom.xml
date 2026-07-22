@@ -46,6 +46,20 @@
                         </configuration>
                     </execution>
                     <execution>
+                        <id>generate-license-file</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>npm</executable>
+                            <arguments>
+                                <argument>run</argument>
+                                <argument>generateLicenseFile</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
                         <id>build-prod</id>
                         <phase>process-resources</phase>
                         <goals>
