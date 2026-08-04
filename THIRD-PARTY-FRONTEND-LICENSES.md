@@ -163,29 +163,29 @@
     - version: 21.2.18
     - licenses: MIT
     - repository: https://github.com/angular/angular-cli
- - **[@angular/common@21.2.17](https://github.com/angular/angular)**
+ - **[@angular/common@21.2.19](https://github.com/angular/angular)**
     - name: @angular/common
-    - version: 21.2.17
+    - version: 21.2.19
     - licenses: MIT
     - repository: https://github.com/angular/angular
- - **[@angular/compiler-cli@21.2.17](https://github.com/angular/angular)**
+ - **[@angular/compiler-cli@21.2.19](https://github.com/angular/angular)**
     - name: @angular/compiler-cli
-    - version: 21.2.17
+    - version: 21.2.19
     - licenses: MIT
     - repository: https://github.com/angular/angular
- - **[@angular/compiler@21.2.17](https://github.com/angular/angular)**
+ - **[@angular/compiler@21.2.19](https://github.com/angular/angular)**
     - name: @angular/compiler
-    - version: 21.2.17
+    - version: 21.2.19
     - licenses: MIT
     - repository: https://github.com/angular/angular
- - **[@angular/core@21.2.17](https://github.com/angular/angular)**
+ - **[@angular/core@21.2.19](https://github.com/angular/angular)**
     - name: @angular/core
-    - version: 21.2.17
+    - version: 21.2.19
     - licenses: MIT
     - repository: https://github.com/angular/angular
- - **[@angular/forms@21.2.17](https://github.com/angular/angular)**
+ - **[@angular/forms@21.2.19](https://github.com/angular/angular)**
     - name: @angular/forms
-    - version: 21.2.17
+    - version: 21.2.19
     - licenses: MIT
     - repository: https://github.com/angular/angular
  - **[@angular/material@21.2.14](https://github.com/angular/components)**
@@ -193,19 +193,19 @@
     - version: 21.2.14
     - licenses: MIT
     - repository: https://github.com/angular/components
- - **[@angular/platform-browser-dynamic@21.2.17](https://github.com/angular/angular)**
+ - **[@angular/platform-browser-dynamic@21.2.19](https://github.com/angular/angular)**
     - name: @angular/platform-browser-dynamic
-    - version: 21.2.17
+    - version: 21.2.19
     - licenses: MIT
     - repository: https://github.com/angular/angular
- - **[@angular/platform-browser@21.2.17](https://github.com/angular/angular)**
+ - **[@angular/platform-browser@21.2.19](https://github.com/angular/angular)**
     - name: @angular/platform-browser
-    - version: 21.2.17
+    - version: 21.2.19
     - licenses: MIT
     - repository: https://github.com/angular/angular
- - **[@angular/router@21.2.17](https://github.com/angular/angular)**
+ - **[@angular/router@21.2.19](https://github.com/angular/angular)**
     - name: @angular/router
-    - version: 21.2.17
+    - version: 21.2.19
     - licenses: MIT
     - repository: https://github.com/angular/angular
  - **[@asamuzakjp/css-color@3.2.0](https://github.com/asamuzaK/cssColor)**
@@ -1533,14 +1533,14 @@
     - version: 1.0.0-rc.4
     - licenses: MIT
     - repository: https://github.com/rolldown/rolldown
- - **[@rollup/rollup-linux-x64-gnu@4.62.2](https://github.com/rollup/rollup)**
+ - **[@rollup/rollup-linux-x64-gnu@4.62.4](https://github.com/rollup/rollup)**
     - name: @rollup/rollup-linux-x64-gnu
-    - version: 4.62.2
+    - version: 4.62.4
     - licenses: MIT
     - repository: https://github.com/rollup/rollup
- - **[@rollup/rollup-linux-x64-musl@4.62.2](https://github.com/rollup/rollup)**
+ - **[@rollup/rollup-linux-x64-musl@4.62.4](https://github.com/rollup/rollup)**
     - name: @rollup/rollup-linux-x64-musl
-    - version: 4.62.2
+    - version: 4.62.4
     - licenses: MIT
     - repository: https://github.com/rollup/rollup
  - **[@schematics/angular@21.2.18](https://github.com/angular/angular-cli)**
@@ -3118,9 +3118,9 @@
     - version: 2.0.6
     - licenses: MIT
     - repository: https://github.com/hiddentao/fast-levenshtein
- - **[fast-uri@3.1.4](https://github.com/fastify/fast-uri)**
+ - **[fast-uri@3.1.5](https://github.com/fastify/fast-uri)**
     - name: fast-uri
-    - version: 3.1.4
+    - version: 3.1.5
     - licenses: BSD-3-Clause
     - repository: https://github.com/fastify/fast-uri
  - **[faye-websocket@0.11.4](https://github.com/faye/faye-websocket-node)**
@@ -5008,9 +5008,9 @@
     - version: 1.0.0-rc.4
     - licenses: MIT
     - repository: https://github.com/rolldown/rolldown
- - **[rollup@4.62.2](https://github.com/rollup/rollup)**
+ - **[rollup@4.62.4](https://github.com/rollup/rollup)**
     - name: rollup
-    - version: 4.62.2
+    - version: 4.62.4
     - licenses: MIT
     - repository: https://github.com/rollup/rollup
  - **[router@2.2.0](https://github.com/pillarjs/router)**
@@ -5563,9 +5563,9 @@
     - version: 2.5.0
     - licenses: MIT
     - repository: https://github.com/JoshuaKGoldberg/ts-api-utils
- - **[ts-jest@29.4.11](https://github.com/kulshekhar/ts-jest)**
+ - **[ts-jest@29.4.12](https://github.com/kulshekhar/ts-jest)**
     - name: ts-jest
-    - version: 29.4.11
+    - version: 29.4.12
     - licenses: MIT
     - repository: https://github.com/kulshekhar/ts-jest
  - **[ts-node@10.9.2](https://github.com/TypeStrong/ts-node)**
