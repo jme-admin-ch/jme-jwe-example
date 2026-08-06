@@ -3,16 +3,10 @@
     "jme-jwe-scs-ui@*": {
       "reason": "Apache-2.0; this project itself, see LICENSE in the repository root"
     },
-    "@csstools/color-helpers@5.1.0": {
+    "@csstools/color-helpers@*": {
       "reason": "MIT-0; see: https://github.com/csstools/postcss-plugins"
     },
-    "@csstools/color-helpers@6.1.0": {
-      "reason": "MIT-0; see: https://github.com/csstools/postcss-plugins"
-    },
-    "@csstools/css-syntax-patches-for-csstree@1.1.6": {
-      "reason": "MIT-0; see: https://github.com/csstools/postcss-plugins"
-    },
-    "@csstools/css-syntax-patches-for-csstree@1.1.7": {
+    "@csstools/css-syntax-patches-for-csstree@*": {
       "reason": "MIT-0; see: https://github.com/csstools/postcss-plugins"
     },
     "argparse@*": {
