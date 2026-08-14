@@ -12,7 +12,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ch.admin.bit.jeap:jeap-oauth-mock-server**: 8.2.0 → 8.6.0 (minor)
 - **ch.admin.bit.jeap.jme:jme-spring-boot-integration-test**: 5.8.1 → 5.12.0 (minor)
 - **eslint**: 10.8.0 → 10.8.1 (patch)
-- **angular-eslint**: 21.4.0 → 22.1.0 (major)
 - **@typescript-eslint/parser**: 8.66.0 → 8.67.0 (minor)
 - **@typescript-eslint/eslint-plugin**: 8.66.0 → 8.67.0 (minor)
 - **@babel/core**: 7.29.7 → 8.0.1 (major)
