@@ -82,12 +82,12 @@
     - name: @angular-devkit/core
     - licenses: MIT
     - repository: https://github.com/angular/angular-cli
-    - license text: third-party-licenses/@angular-devkit__core/LICENSE
+    - license text: [third-party-licenses/@angular-devkit__core/LICENSE](third-party-licenses/@angular-devkit__core/LICENSE)
  - **[@angular-devkit/schematics](https://github.com/angular/angular-cli)**
     - name: @angular-devkit/schematics
     - licenses: MIT
     - repository: https://github.com/angular/angular-cli
-    - license text: third-party-licenses/@angular-devkit__schematics/LICENSE
+    - license text: [third-party-licenses/@angular-devkit__schematics/LICENSE](third-party-licenses/@angular-devkit__schematics/LICENSE)
  - **[@angular-eslint/builder](https://github.com/angular-eslint/angular-eslint)**
     - name: @angular-eslint/builder
     - licenses: MIT
@@ -124,7 +124,7 @@
     - name: @angular/cdk
     - licenses: MIT
     - repository: https://github.com/angular/components
-    - license text: third-party-licenses/@angular__cdk/LICENSE
+    - license text: [third-party-licenses/@angular__cdk/LICENSE](third-party-licenses/@angular__cdk/LICENSE)
  - **[@angular/cli](https://github.com/angular/angular-cli)**
     - name: @angular/cli
     - licenses: MIT
@@ -133,7 +133,7 @@
     - name: @angular/common
     - licenses: MIT
     - repository: https://github.com/angular/angular
-    - license text: third-party-licenses/@angular__common/LICENSE
+    - license text: [third-party-licenses/@angular__common/LICENSE](third-party-licenses/@angular__common/LICENSE)
  - **[@angular/compiler-cli](https://github.com/angular/angular)**
     - name: @angular/compiler-cli
     - licenses: MIT
@@ -142,22 +142,22 @@
     - name: @angular/compiler
     - licenses: MIT
     - repository: https://github.com/angular/angular
-    - license text: third-party-licenses/@angular__compiler/LICENSE
+    - license text: [third-party-licenses/@angular__compiler/LICENSE](third-party-licenses/@angular__compiler/LICENSE)
  - **[@angular/core](https://github.com/angular/angular)**
     - name: @angular/core
     - licenses: MIT
     - repository: https://github.com/angular/angular
-    - license text: third-party-licenses/@angular__core/LICENSE
+    - license text: [third-party-licenses/@angular__core/LICENSE](third-party-licenses/@angular__core/LICENSE)
  - **[@angular/forms](https://github.com/angular/angular)**
     - name: @angular/forms
     - licenses: MIT
     - repository: https://github.com/angular/angular
-    - license text: third-party-licenses/@angular__forms/LICENSE
+    - license text: [third-party-licenses/@angular__forms/LICENSE](third-party-licenses/@angular__forms/LICENSE)
  - **[@angular/material](https://github.com/angular/components)**
     - name: @angular/material
     - licenses: MIT
     - repository: https://github.com/angular/components
-    - license text: third-party-licenses/@angular__material/LICENSE
+    - license text: [third-party-licenses/@angular__material/LICENSE](third-party-licenses/@angular__material/LICENSE)
  - **[@angular/platform-browser-dynamic](https://github.com/angular/angular)**
     - name: @angular/platform-browser-dynamic
     - licenses: MIT
@@ -166,12 +166,12 @@
     - name: @angular/platform-browser
     - licenses: MIT
     - repository: https://github.com/angular/angular
-    - license text: third-party-licenses/@angular__platform-browser/LICENSE
+    - license text: [third-party-licenses/@angular__platform-browser/LICENSE](third-party-licenses/@angular__platform-browser/LICENSE)
  - **[@angular/router](https://github.com/angular/angular)**
     - name: @angular/router
     - licenses: MIT
     - repository: https://github.com/angular/angular
-    - license text: third-party-licenses/@angular__router/LICENSE
+    - license text: [third-party-licenses/@angular__router/LICENSE](third-party-licenses/@angular__router/LICENSE)
  - **[@asamuzakjp/css-color](https://github.com/asamuzaK/cssColor)**
     - name: @asamuzakjp/css-color
     - licenses: MIT
@@ -852,7 +852,7 @@
     - name: @jeap/jeap-jwe-client
     - licenses: Apache-2.0
     - repository: https://github.com/jeap-admin-ch/jeap-jwe-client
-    - license text: third-party-licenses/@jeap__jeap-jwe-client/LICENSE
+    - license text: [third-party-licenses/@jeap__jeap-jwe-client/LICENSE](third-party-licenses/@jeap__jeap-jwe-client/LICENSE)
  - **[@jest/console](https://github.com/jestjs/jest)**
     - name: @jest/console
     - licenses: MIT
@@ -949,7 +949,7 @@
     - name: @jridgewell/sourcemap-codec
     - licenses: MIT
     - repository: https://github.com/jridgewell/sourcemaps
-    - license text: third-party-licenses/@jridgewell__sourcemap-codec/LICENSE
+    - license text: [third-party-licenses/@jridgewell__sourcemap-codec/LICENSE](third-party-licenses/@jridgewell__sourcemap-codec/LICENSE)
  - **[@jridgewell/trace-mapping](https://github.com/jridgewell/sourcemaps)**
     - name: @jridgewell/trace-mapping
     - licenses: MIT
@@ -1086,7 +1086,7 @@
     - name: @ngx-translate/core
     - licenses: MIT
     - repository: https://github.com/ngx-translate/core
-    - license text: third-party-licenses/@ngx-translate__core/LICENSE
+    - license text: [third-party-licenses/@ngx-translate__core/LICENSE](third-party-licenses/@ngx-translate__core/LICENSE)
  - **[@noble/hashes](https://github.com/paulmillr/noble-hashes)**
     - name: @noble/hashes
     - licenses: MIT
@@ -1131,7 +1131,7 @@
     - name: @oblique/oblique
     - licenses: MIT
     - repository: https://github.com/oblique-bit/oblique
-    - license text: third-party-licenses/@oblique__oblique/LICENSE
+    - license text: [third-party-licenses/@oblique__oblique/LICENSE](third-party-licenses/@oblique__oblique/LICENSE)
  - **@oblique/toolchain**
     - name: @oblique/toolchain
     - licenses: MIT
@@ -1211,7 +1211,7 @@
     - name: @popperjs/core
     - licenses: MIT
     - repository: github:popperjs/popper-core
-    - license text: third-party-licenses/@popperjs__core/LICENSE.md
+    - license text: [third-party-licenses/@popperjs__core/LICENSE.md](third-party-licenses/@popperjs__core/LICENSE.md)
  - **[@rolldown/binding-linux-x64-gnu](https://github.com/rolldown/rolldown)**
     - name: @rolldown/binding-linux-x64-gnu
     - licenses: MIT
@@ -1236,7 +1236,7 @@
     - name: @schematics/angular
     - licenses: MIT
     - repository: https://github.com/angular/angular-cli
-    - license text: third-party-licenses/@schematics__angular/LICENSE
+    - license text: [third-party-licenses/@schematics__angular/LICENSE](third-party-licenses/@schematics__angular/LICENSE)
  - **[@sigstore/bundle](https://github.com/sigstore/sigstore-js)**
     - name: @sigstore/bundle
     - licenses: Apache-2.0
@@ -1277,7 +1277,7 @@
     - name: @standard-schema/spec
     - licenses: MIT
     - repository: https://github.com/standard-schema/standard-schema
-    - license text: third-party-licenses/@standard-schema__spec/LICENSE
+    - license text: [third-party-licenses/@standard-schema__spec/LICENSE](third-party-licenses/@standard-schema__spec/LICENSE)
  - **[@tsconfig/node10](https://github.com/tsconfig/bases)**
     - name: @tsconfig/node10
     - licenses: MIT
@@ -1626,7 +1626,7 @@
     - name: ajv-formats
     - licenses: MIT
     - repository: https://github.com/ajv-validator/ajv-formats
-    - license text: third-party-licenses/ajv-formats/LICENSE
+    - license text: [third-party-licenses/ajv-formats/LICENSE](third-party-licenses/ajv-formats/LICENSE)
  - **[ajv-keywords](https://github.com/epoberezkin/ajv-keywords)**
     - name: ajv-keywords
     - licenses: MIT
@@ -1639,12 +1639,12 @@
     - name: ajv
     - licenses: MIT
     - repository: ajv-validator/ajv
-    - license text: third-party-licenses/ajv@8.18.0/LICENSE
+    - license text: [third-party-licenses/ajv@8.18.0/LICENSE](third-party-licenses/ajv@8.18.0/LICENSE)
  - **[ajv](ajv-validator/ajv)**
     - name: ajv
     - licenses: MIT
     - repository: ajv-validator/ajv
-    - license text: third-party-licenses/ajv@8.20.0/LICENSE
+    - license text: [third-party-licenses/ajv@8.20.0/LICENSE](third-party-licenses/ajv@8.20.0/LICENSE)
  - **[algoliasearch](https://github.com/algolia/algoliasearch-client-javascript)**
     - name: algoliasearch
     - licenses: MIT
@@ -1657,12 +1657,12 @@
     - name: angular-oauth2-oidc
     - licenses: MIT
     - repository: https://github.com/manfredsteyer/angular-oauth2-oidc
-    - license text: third-party-licenses/angular-oauth2-oidc/LICENSE
+    - license text: [third-party-licenses/angular-oauth2-oidc/LICENSE](third-party-licenses/angular-oauth2-oidc/LICENSE)
  - **[ansi-colors](doowb/ansi-colors)**
     - name: ansi-colors
     - licenses: MIT
     - repository: doowb/ansi-colors
-    - license text: third-party-licenses/ansi-colors/LICENSE
+    - license text: [third-party-licenses/ansi-colors/LICENSE](third-party-licenses/ansi-colors/LICENSE)
  - **[ansi-escapes](sindresorhus/ansi-escapes)**
     - name: ansi-escapes
     - licenses: MIT
@@ -1683,7 +1683,7 @@
     - name: ansi-regex
     - licenses: MIT
     - repository: chalk/ansi-regex
-    - license text: third-party-licenses/ansi-regex/license
+    - license text: [third-party-licenses/ansi-regex/license](third-party-licenses/ansi-regex/license)
  - **[ansi-styles](chalk/ansi-styles)**
     - name: ansi-styles
     - licenses: MIT
@@ -1900,7 +1900,7 @@
     - name: chalk
     - licenses: MIT
     - repository: chalk/chalk
-    - license text: third-party-licenses/chalk/license
+    - license text: [third-party-licenses/chalk/license](third-party-licenses/chalk/license)
  - **[char-regex](https://github.com/Richienb/char-regex)**
     - name: char-regex
     - licenses: MIT
@@ -1941,12 +1941,12 @@
     - name: cli-cursor
     - licenses: MIT
     - repository: sindresorhus/cli-cursor
-    - license text: third-party-licenses/cli-cursor/license
+    - license text: [third-party-licenses/cli-cursor/license](third-party-licenses/cli-cursor/license)
  - **[cli-spinners](sindresorhus/cli-spinners)**
     - name: cli-spinners
     - licenses: MIT
     - repository: sindresorhus/cli-spinners
-    - license text: third-party-licenses/cli-spinners/license
+    - license text: [third-party-licenses/cli-spinners/license](third-party-licenses/cli-spinners/license)
  - **[cli-truncate](sindresorhus/cli-truncate)**
     - name: cli-truncate
     - licenses: MIT
@@ -2255,7 +2255,7 @@
     - name: entities
     - licenses: BSD-2-Clause
     - repository: https://github.com/fb55/entities
-    - license text: third-party-licenses/entities/LICENSE
+    - license text: [third-party-licenses/entities/LICENSE](third-party-licenses/entities/LICENSE)
  - **[env-paths](sindresorhus/env-paths)**
     - name: env-paths
     - licenses: MIT
@@ -2424,7 +2424,7 @@
     - name: fast-deep-equal
     - licenses: MIT
     - repository: https://github.com/epoberezkin/fast-deep-equal
-    - license text: third-party-licenses/fast-deep-equal/LICENSE
+    - license text: [third-party-licenses/fast-deep-equal/LICENSE](third-party-licenses/fast-deep-equal/LICENSE)
  - **[fast-diff](https://github.com/jhchen/fast-diff)**
     - name: fast-diff
     - licenses: Apache-2.0
@@ -2441,7 +2441,7 @@
     - name: fast-uri
     - licenses: BSD-3-Clause
     - repository: https://github.com/fastify/fast-uri
-    - license text: third-party-licenses/fast-uri/LICENSE
+    - license text: [third-party-licenses/fast-uri/LICENSE](third-party-licenses/fast-uri/LICENSE)
  - **[faye-websocket](https://github.com/faye/faye-websocket-node)**
     - name: faye-websocket
     - licenses: Apache-2.0
@@ -2538,7 +2538,7 @@
     - name: get-east-asian-width
     - licenses: MIT
     - repository: sindresorhus/get-east-asian-width
-    - license text: third-party-licenses/get-east-asian-width/license
+    - license text: [third-party-licenses/get-east-asian-width/license](third-party-licenses/get-east-asian-width/license)
  - **[get-intrinsic](https://github.com/ljharb/get-intrinsic)**
     - name: get-intrinsic
     - licenses: MIT
@@ -2807,7 +2807,7 @@
     - name: is-interactive
     - licenses: MIT
     - repository: sindresorhus/is-interactive
-    - license text: third-party-licenses/is-interactive/license
+    - license text: [third-party-licenses/is-interactive/license](third-party-licenses/is-interactive/license)
  - **[is-network-error](sindresorhus/is-network-error)**
     - name: is-network-error
     - licenses: MIT
@@ -2844,7 +2844,7 @@
     - name: is-unicode-supported
     - licenses: MIT
     - repository: sindresorhus/is-unicode-supported
-    - license text: third-party-licenses/is-unicode-supported/license
+    - license text: [third-party-licenses/is-unicode-supported/license](third-party-licenses/is-unicode-supported/license)
  - **[is-what](https://github.com/mesqueeb/is-what)**
     - name: is-what
     - licenses: MIT
@@ -3013,12 +3013,12 @@
     - name: jose
     - licenses: MIT
     - repository: panva/jose
-    - license text: third-party-licenses/jose/LICENSE.md
+    - license text: [third-party-licenses/jose/LICENSE.md](third-party-licenses/jose/LICENSE.md)
  - **[js-cookie](https://github.com/js-cookie/js-cookie)**
     - name: js-cookie
     - licenses: MIT
     - repository: https://github.com/js-cookie/js-cookie
-    - license text: third-party-licenses/js-cookie/LICENSE
+    - license text: [third-party-licenses/js-cookie/LICENSE](third-party-licenses/js-cookie/LICENSE)
  - **[js-tokens](lydell/js-tokens)**
     - name: js-tokens
     - licenses: MIT
@@ -3063,7 +3063,7 @@
     - name: json-schema-traverse
     - licenses: MIT
     - repository: https://github.com/epoberezkin/json-schema-traverse
-    - license text: third-party-licenses/json-schema-traverse/LICENSE
+    - license text: [third-party-licenses/json-schema-traverse/LICENSE](third-party-licenses/json-schema-traverse/LICENSE)
  - **[json-schema-typed](https://github.com/RemyRylan/json-schema-typed)**
     - name: json-schema-typed
     - licenses: BSD-2-Clause
@@ -3080,7 +3080,7 @@
     - name: jsonc-parser
     - licenses: MIT
     - repository: https://github.com/microsoft/node-jsonc-parser
-    - license text: third-party-licenses/jsonc-parser/LICENSE.md
+    - license text: [third-party-licenses/jsonc-parser/LICENSE.md](third-party-licenses/jsonc-parser/LICENSE.md)
  - **[jsonparse](http://github.com/creationix/jsonparse)**
     - name: jsonparse
     - licenses: MIT
@@ -3169,7 +3169,7 @@
     - name: log-symbols
     - licenses: MIT
     - repository: sindresorhus/log-symbols
-    - license text: third-party-licenses/log-symbols/license
+    - license text: [third-party-licenses/log-symbols/license](third-party-licenses/log-symbols/license)
  - **[log-update](sindresorhus/log-update)**
     - name: log-update
     - licenses: MIT
@@ -3190,7 +3190,7 @@
     - name: magic-string
     - licenses: MIT
     - repository: https://github.com/Rich-Harris/magic-string
-    - license text: third-party-licenses/magic-string/LICENSE
+    - license text: [third-party-licenses/magic-string/LICENSE](third-party-licenses/magic-string/LICENSE)
  - **[make-dir](sindresorhus/make-dir)**
     - name: make-dir
     - licenses: MIT
@@ -3279,7 +3279,7 @@
     - name: mimic-function
     - licenses: MIT
     - repository: sindresorhus/mimic-function
-    - license text: third-party-licenses/mimic-function/license
+    - license text: [third-party-licenses/mimic-function/license](third-party-licenses/mimic-function/license)
  - **[mini-css-extract-plugin](webpack/mini-css-extract-plugin)**
     - name: mini-css-extract-plugin
     - licenses: MIT
@@ -3499,7 +3499,7 @@
     - name: onetime
     - licenses: MIT
     - repository: sindresorhus/onetime
-    - license text: third-party-licenses/onetime/license
+    - license text: [third-party-licenses/onetime/license](third-party-licenses/onetime/license)
  - **[open](sindresorhus/open)**
     - name: open
     - licenses: MIT
@@ -3516,7 +3516,7 @@
     - name: ora
     - licenses: MIT
     - repository: sindresorhus/ora
-    - license text: third-party-licenses/ora/license
+    - license text: [third-party-licenses/ora/license](third-party-licenses/ora/license)
  - **[ordered-binary](http://github.com/kriszyp/ordered-binary)**
     - name: ordered-binary
     - licenses: MIT
@@ -3585,7 +3585,7 @@
     - name: parse5
     - licenses: MIT
     - repository: https://github.com/inikulin/parse5
-    - license text: third-party-licenses/parse5/LICENSE
+    - license text: [third-party-licenses/parse5/LICENSE](third-party-licenses/parse5/LICENSE)
  - **[parseurl](pillarjs/parseurl)**
     - name: parseurl
     - licenses: MIT
@@ -3634,7 +3634,7 @@
     - name: picomatch
     - licenses: MIT
     - repository: micromatch/picomatch
-    - license text: third-party-licenses/picomatch/LICENSE
+    - license text: [third-party-licenses/picomatch/LICENSE](third-party-licenses/picomatch/LICENSE)
  - **[pify](sindresorhus/pify)**
     - name: pify
     - licenses: MIT
@@ -3835,7 +3835,7 @@
     - name: require-from-string
     - licenses: MIT
     - repository: floatdrop/require-from-string
-    - license text: third-party-licenses/require-from-string/license
+    - license text: [third-party-licenses/require-from-string/license](third-party-licenses/require-from-string/license)
  - **[requires-port](https://github.com/unshiftio/requires-port)**
     - name: requires-port
     - licenses: MIT
@@ -3864,7 +3864,7 @@
     - name: restore-cursor
     - licenses: MIT
     - repository: sindresorhus/restore-cursor
-    - license text: third-party-licenses/restore-cursor/license
+    - license text: [third-party-licenses/restore-cursor/license](third-party-licenses/restore-cursor/license)
  - **[retry](https://github.com/tim-kos/node-retry)**
     - name: retry
     - licenses: MIT
@@ -3897,7 +3897,7 @@
     - name: rxjs
     - licenses: Apache-2.0
     - repository: https://github.com/reactivex/rxjs
-    - license text: third-party-licenses/rxjs/LICENSE.txt
+    - license text: [third-party-licenses/rxjs/LICENSE.txt](third-party-licenses/rxjs/LICENSE.txt)
  - **[safe-buffer](https://github.com/feross/safe-buffer)**
     - name: safe-buffer
     - licenses: MIT
@@ -4022,7 +4022,7 @@
     - name: signal-exit
     - licenses: ISC
     - repository: https://github.com/tapjs/signal-exit
-    - license text: third-party-licenses/signal-exit/LICENSE.txt
+    - license text: [third-party-licenses/signal-exit/LICENSE.txt](third-party-licenses/signal-exit/LICENSE.txt)
  - **[sigstore](https://github.com/sigstore/sigstore-js)**
     - name: sigstore
     - licenses: Apache-2.0
@@ -4079,7 +4079,7 @@
     - name: source-map
     - licenses: BSD-3-Clause
     - repository: http://github.com/mozilla/source-map
-    - license text: third-party-licenses/source-map/LICENSE
+    - license text: [third-party-licenses/source-map/LICENSE](third-party-licenses/source-map/LICENSE)
  - **[spdx-exceptions](kemitchell/spdx-exceptions.json)**
     - name: spdx-exceptions
     - licenses: CC-BY-3.0
@@ -4124,7 +4124,7 @@
     - name: stdin-discarder
     - licenses: MIT
     - repository: sindresorhus/stdin-discarder
-    - license text: third-party-licenses/stdin-discarder/license
+    - license text: [third-party-licenses/stdin-discarder/license](third-party-licenses/stdin-discarder/license)
  - **[string_decoder](https://github.com/nodejs/string_decoder)**
     - name: string_decoder
     - licenses: MIT
@@ -4153,7 +4153,7 @@
     - name: string-width
     - licenses: MIT
     - repository: sindresorhus/string-width
-    - license text: third-party-licenses/string-width/license
+    - license text: [third-party-licenses/string-width/license](third-party-licenses/string-width/license)
  - **[strip-ansi](chalk/strip-ansi)**
     - name: strip-ansi
     - licenses: MIT
@@ -4162,7 +4162,7 @@
     - name: strip-ansi
     - licenses: MIT
     - repository: chalk/strip-ansi
-    - license text: third-party-licenses/strip-ansi/license
+    - license text: [third-party-licenses/strip-ansi/license](third-party-licenses/strip-ansi/license)
  - **[strip-bom](sindresorhus/strip-bom)**
     - name: strip-bom
     - licenses: MIT
@@ -4307,7 +4307,7 @@
     - name: tslib
     - licenses: 0BSD
     - repository: https://github.com/Microsoft/tslib
-    - license text: third-party-licenses/tslib/LICENSE.txt
+    - license text: [third-party-licenses/tslib/LICENSE.txt](third-party-licenses/tslib/LICENSE.txt)
  - **[tsyringe](https://github.com/Microsoft/tsyringe)**
     - name: tsyringe
     - licenses: MIT
@@ -4624,7 +4624,7 @@
     - name: yoctocolors
     - licenses: MIT
     - repository: sindresorhus/yoctocolors
-    - license text: third-party-licenses/yoctocolors/license
+    - license text: [third-party-licenses/yoctocolors/license](third-party-licenses/yoctocolors/license)
  - **[zod-to-json-schema](https://github.com/StefanTerdell/zod-to-json-schema)**
     - name: zod-to-json-schema
     - licenses: ISC
@@ -4637,5 +4637,5 @@
     - name: zone.js
     - licenses: MIT
     - repository: https://github.com/angular/angular
-    - license text: third-party-licenses/zone.js/LICENSE
-    - license text: third-party-licenses/zone.js/LICENSE.wrapped
+    - license text: [third-party-licenses/zone.js/LICENSE](third-party-licenses/zone.js/LICENSE)
+    - license text: [third-party-licenses/zone.js/LICENSE.wrapped](third-party-licenses/zone.js/LICENSE.wrapped)

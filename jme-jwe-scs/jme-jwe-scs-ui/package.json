@@ -41,7 +41,7 @@
     "@angular/compiler-cli": "^21.2.19",
     "@angular/platform-browser-dynamic": "^21.2.19",
     "@eslint/js": "^10.0.0",
-    "@jeap/jeap-frontend-license-checker": "^1.0.0",
+    "@jeap/jeap-frontend-license-checker": "^1.0.1",
     "@oblique/toolchain": "^15.4.0",
     "@types/jest": "^30.0.0",
     "ajv": "^8.0.0",
