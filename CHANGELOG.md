@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [8.0.0] - 2026-08-18
+
+### Dependencies
+- **ch.admin.bit.jeap:jeap-spring-boot-parent**: 39.0.1 → 39.3.0 (minor)
+- **ch.admin.bit.jeap.jme:jme-spring-boot-integration-test**: 5.12.0 → 5.13.0 (minor)
+- **typescript-eslint**: 8.66.0 → 8.67.0 (minor)
+- **eslint**: 10.8.0 → 10.8.1 (patch)
+- **angular-eslint**: 21.4.0 → 22.1.0 (major)
+- **@oblique/toolchain**: 15.4.3 → 15.4.4 (patch)
+- **@oblique/oblique**: 15.4.3 → 15.4.4 (patch)
+- **@jeap/jeap-jwe-client**: 1.2.0 → 1.3.0 (minor)
+
 ## [7.0.0] - 2026-08-17
 
 ### Changed
