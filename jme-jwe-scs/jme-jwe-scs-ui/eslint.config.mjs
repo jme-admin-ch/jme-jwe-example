@@ -1,41 +1,26 @@
-import tsParser from "@typescript-eslint/parser";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
+// @ts-check
+import eslint from "@eslint/js";
+import angular from "angular-eslint";
+import prettierRecommended from "eslint-plugin-prettier/recommended";
+import tseslint from "typescript-eslint";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-	baseDirectory: __dirname,
-	recommendedConfig: js.configs.recommended,
-	allConfig: js.configs.all,
-});
-
-export default [
-	...compat
-		.extends(
-			"eslint:recommended",
-			"plugin:@typescript-eslint/eslint-plugin/recommended",
-			"plugin:@angular-eslint/recommended",
-			"plugin:@angular-eslint/template/process-inline-templates",
-			"plugin:prettier/recommended",
-		)
-		.map((config) => ({
-			...config,
-			files: ["**/*.ts"],
-		})),
+export default tseslint.config(
 	{
 		files: ["**/*.ts"],
 
-		languageOptions: {
-			parser: tsParser,
-			ecmaVersion: 5,
-			sourceType: "script",
+		extends: [
+			eslint.configs.recommended,
+			...tseslint.configs.recommended,
+			...angular.configs.tsRecommended,
+			prettierRecommended,
+		],
 
+		processor: angular.processInlineTemplates,
+
+		languageOptions: {
 			parserOptions: {
 				project: ["tsconfig.lint.json"],
-				createDefaultProgram: true,
+				tsconfigRootDir: import.meta.dirname,
 			},
 		},
 
@@ -156,18 +141,16 @@ export default [
 			"max-lines-per-function": "off",
 		},
 	},
-	...compat.extends("plugin:@angular-eslint/template/recommended").map((config) => ({
-		...config,
+	{
 		files: ["**/*.html"],
-	})),
-	...compat.extends("plugin:prettier/recommended").map((config) => ({
-		...config,
-		files: ["**/*.html"],
-		ignores: ["**/*inline-template-*.component.html"],
-	})),
+
+		extends: [...angular.configs.templateRecommended],
+	},
 	{
 		files: ["**/*.html"],
 		ignores: ["**/*inline-template-*.component.html"],
+
+		extends: [prettierRecommended],
 
 		rules: {
 			"prettier/prettier": [
@@ -178,4 +161,4 @@ export default [
 			],
 		},
 	},
-];
+);

@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [7.0.0] - 2026-08-17
 
+### Changed
+- UI: migrated `eslint.config.mjs` from the `FlatCompat` eslintrc shim to native
+  ESLint flat config using `typescript-eslint` and the `angular-eslint` premade
+  configs. This drops the undeclared `@eslint/js` / `@eslint/eslintrc` imports
+  that ESLint 10 no longer provides transitively.
+- UI: removed the redundant `@angular-eslint/eslint-plugin`,
+  `@angular-eslint/eslint-plugin-template`, `@angular-eslint/template-parser`,
+  `@angular-eslint/utils`, `@typescript-eslint/eslint-plugin` and
+  `@typescript-eslint/parser` dev dependencies — they are provided by the
+  `angular-eslint` and `typescript-eslint` umbrella packages.
+- UI: kept `angular-eslint` on 21.x; the 22.x line targets Angular 22 and does
+  not match the Angular 21 version used here.
+
 ### Dependencies
 - **ch.admin.bit.jeap:jeap-spring-boot-parent**: 39.0.0 → 39.0.1 (patch)
 - **ch.admin.bit.jeap:jeap-oauth-mock-server**: 8.6.0 → 9.0.0 (major)
