@@ -82,12 +82,10 @@
     - name: @angular-devkit/core
     - licenses: MIT
     - repository: https://github.com/angular/angular-cli
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular-devkit__core/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular-devkit__core/LICENSE)
  - **[@angular-devkit/schematics](https://github.com/angular/angular-cli)**
     - name: @angular-devkit/schematics
     - licenses: MIT
     - repository: https://github.com/angular/angular-cli
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular-devkit__schematics/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular-devkit__schematics/LICENSE)
  - **[@angular-eslint/builder](https://github.com/angular-eslint/angular-eslint)**
     - name: @angular-eslint/builder
     - licenses: MIT
@@ -124,7 +122,6 @@
     - name: @angular/cdk
     - licenses: MIT
     - repository: https://github.com/angular/components
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular__cdk/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular__cdk/LICENSE)
  - **[@angular/cli](https://github.com/angular/angular-cli)**
     - name: @angular/cli
     - licenses: MIT
@@ -133,7 +130,6 @@
     - name: @angular/common
     - licenses: MIT
     - repository: https://github.com/angular/angular
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular__common/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular__common/LICENSE)
  - **[@angular/compiler-cli](https://github.com/angular/angular)**
     - name: @angular/compiler-cli
     - licenses: MIT
@@ -142,22 +138,18 @@
     - name: @angular/compiler
     - licenses: MIT
     - repository: https://github.com/angular/angular
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular__compiler/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular__compiler/LICENSE)
  - **[@angular/core](https://github.com/angular/angular)**
     - name: @angular/core
     - licenses: MIT
     - repository: https://github.com/angular/angular
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular__core/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular__core/LICENSE)
  - **[@angular/forms](https://github.com/angular/angular)**
     - name: @angular/forms
     - licenses: MIT
     - repository: https://github.com/angular/angular
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular__forms/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular__forms/LICENSE)
  - **[@angular/material](https://github.com/angular/components)**
     - name: @angular/material
     - licenses: MIT
     - repository: https://github.com/angular/components
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular__material/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular__material/LICENSE)
  - **[@angular/platform-browser-dynamic](https://github.com/angular/angular)**
     - name: @angular/platform-browser-dynamic
     - licenses: MIT
@@ -166,12 +158,10 @@
     - name: @angular/platform-browser
     - licenses: MIT
     - repository: https://github.com/angular/angular
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular__platform-browser/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular__platform-browser/LICENSE)
  - **[@angular/router](https://github.com/angular/angular)**
     - name: @angular/router
     - licenses: MIT
     - repository: https://github.com/angular/angular
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular__router/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@angular__router/LICENSE)
  - **[@asamuzakjp/css-color](https://github.com/asamuzaK/cssColor)**
     - name: @asamuzakjp/css-color
     - licenses: MIT
@@ -852,7 +842,6 @@
     - name: @jeap/jeap-jwe-client
     - licenses: Apache-2.0
     - repository: https://github.com/jeap-admin-ch/jeap-jwe-client
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@jeap__jeap-jwe-client/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@jeap__jeap-jwe-client/LICENSE)
  - **[@jest/console](https://github.com/jestjs/jest)**
     - name: @jest/console
     - licenses: MIT
@@ -949,7 +938,6 @@
     - name: @jridgewell/sourcemap-codec
     - licenses: MIT
     - repository: https://github.com/jridgewell/sourcemaps
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@jridgewell__sourcemap-codec/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@jridgewell__sourcemap-codec/LICENSE)
  - **[@jridgewell/trace-mapping](https://github.com/jridgewell/sourcemaps)**
     - name: @jridgewell/trace-mapping
     - licenses: MIT
@@ -1086,7 +1074,6 @@
     - name: @ngx-translate/core
     - licenses: MIT
     - repository: https://github.com/ngx-translate/core
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@ngx-translate__core/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@ngx-translate__core/LICENSE)
  - **[@noble/hashes](https://github.com/paulmillr/noble-hashes)**
     - name: @noble/hashes
     - licenses: MIT
@@ -1131,7 +1118,6 @@
     - name: @oblique/oblique
     - licenses: MIT
     - repository: https://github.com/oblique-bit/oblique
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@oblique__oblique/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@oblique__oblique/LICENSE)
  - **@oblique/toolchain**
     - name: @oblique/toolchain
     - licenses: MIT
@@ -1211,7 +1197,6 @@
     - name: @popperjs/core
     - licenses: MIT
     - repository: github:popperjs/popper-core
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@popperjs__core/LICENSE.md](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@popperjs__core/LICENSE.md)
  - **[@rolldown/binding-linux-x64-gnu](https://github.com/rolldown/rolldown)**
     - name: @rolldown/binding-linux-x64-gnu
     - licenses: MIT
@@ -1236,7 +1221,6 @@
     - name: @schematics/angular
     - licenses: MIT
     - repository: https://github.com/angular/angular-cli
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@schematics__angular/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@schematics__angular/LICENSE)
  - **[@sigstore/bundle](https://github.com/sigstore/sigstore-js)**
     - name: @sigstore/bundle
     - licenses: Apache-2.0
@@ -1277,7 +1261,6 @@
     - name: @standard-schema/spec
     - licenses: MIT
     - repository: https://github.com/standard-schema/standard-schema
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@standard-schema__spec/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/@standard-schema__spec/LICENSE)
  - **[@tsconfig/node10](https://github.com/tsconfig/bases)**
     - name: @tsconfig/node10
     - licenses: MIT
@@ -1626,7 +1609,6 @@
     - name: ajv-formats
     - licenses: MIT
     - repository: https://github.com/ajv-validator/ajv-formats
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/ajv-formats/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/ajv-formats/LICENSE)
  - **[ajv-keywords](https://github.com/epoberezkin/ajv-keywords)**
     - name: ajv-keywords
     - licenses: MIT
@@ -1639,12 +1621,10 @@
     - name: ajv
     - licenses: MIT
     - repository: ajv-validator/ajv
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/ajv@8.18.0/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/ajv@8.18.0/LICENSE)
  - **[ajv](ajv-validator/ajv)**
     - name: ajv
     - licenses: MIT
     - repository: ajv-validator/ajv
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/ajv@8.20.0/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/ajv@8.20.0/LICENSE)
  - **[algoliasearch](https://github.com/algolia/algoliasearch-client-javascript)**
     - name: algoliasearch
     - licenses: MIT
@@ -1657,12 +1637,10 @@
     - name: angular-oauth2-oidc
     - licenses: MIT
     - repository: https://github.com/manfredsteyer/angular-oauth2-oidc
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/angular-oauth2-oidc/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/angular-oauth2-oidc/LICENSE)
  - **[ansi-colors](doowb/ansi-colors)**
     - name: ansi-colors
     - licenses: MIT
     - repository: doowb/ansi-colors
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/ansi-colors/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/ansi-colors/LICENSE)
  - **[ansi-escapes](sindresorhus/ansi-escapes)**
     - name: ansi-escapes
     - licenses: MIT
@@ -1683,7 +1661,6 @@
     - name: ansi-regex
     - licenses: MIT
     - repository: chalk/ansi-regex
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/ansi-regex/license](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/ansi-regex/license)
  - **[ansi-styles](chalk/ansi-styles)**
     - name: ansi-styles
     - licenses: MIT
@@ -1900,7 +1877,6 @@
     - name: chalk
     - licenses: MIT
     - repository: chalk/chalk
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/chalk/license](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/chalk/license)
  - **[char-regex](https://github.com/Richienb/char-regex)**
     - name: char-regex
     - licenses: MIT
@@ -1941,12 +1917,10 @@
     - name: cli-cursor
     - licenses: MIT
     - repository: sindresorhus/cli-cursor
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/cli-cursor/license](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/cli-cursor/license)
  - **[cli-spinners](sindresorhus/cli-spinners)**
     - name: cli-spinners
     - licenses: MIT
     - repository: sindresorhus/cli-spinners
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/cli-spinners/license](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/cli-spinners/license)
  - **[cli-truncate](sindresorhus/cli-truncate)**
     - name: cli-truncate
     - licenses: MIT
@@ -2255,7 +2229,6 @@
     - name: entities
     - licenses: BSD-2-Clause
     - repository: https://github.com/fb55/entities
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/entities/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/entities/LICENSE)
  - **[env-paths](sindresorhus/env-paths)**
     - name: env-paths
     - licenses: MIT
@@ -2424,7 +2397,6 @@
     - name: fast-deep-equal
     - licenses: MIT
     - repository: https://github.com/epoberezkin/fast-deep-equal
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/fast-deep-equal/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/fast-deep-equal/LICENSE)
  - **[fast-diff](https://github.com/jhchen/fast-diff)**
     - name: fast-diff
     - licenses: Apache-2.0
@@ -2441,7 +2413,6 @@
     - name: fast-uri
     - licenses: BSD-3-Clause
     - repository: https://github.com/fastify/fast-uri
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/fast-uri/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/fast-uri/LICENSE)
  - **[faye-websocket](https://github.com/faye/faye-websocket-node)**
     - name: faye-websocket
     - licenses: Apache-2.0
@@ -2538,7 +2509,6 @@
     - name: get-east-asian-width
     - licenses: MIT
     - repository: sindresorhus/get-east-asian-width
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/get-east-asian-width/license](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/get-east-asian-width/license)
  - **[get-intrinsic](https://github.com/ljharb/get-intrinsic)**
     - name: get-intrinsic
     - licenses: MIT
@@ -2807,7 +2777,6 @@
     - name: is-interactive
     - licenses: MIT
     - repository: sindresorhus/is-interactive
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/is-interactive/license](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/is-interactive/license)
  - **[is-network-error](sindresorhus/is-network-error)**
     - name: is-network-error
     - licenses: MIT
@@ -2844,7 +2813,6 @@
     - name: is-unicode-supported
     - licenses: MIT
     - repository: sindresorhus/is-unicode-supported
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/is-unicode-supported/license](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/is-unicode-supported/license)
  - **[is-what](https://github.com/mesqueeb/is-what)**
     - name: is-what
     - licenses: MIT
@@ -3013,12 +2981,10 @@
     - name: jose
     - licenses: MIT
     - repository: panva/jose
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/jose/LICENSE.md](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/jose/LICENSE.md)
  - **[js-cookie](https://github.com/js-cookie/js-cookie)**
     - name: js-cookie
     - licenses: MIT
     - repository: https://github.com/js-cookie/js-cookie
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/js-cookie/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/js-cookie/LICENSE)
  - **[js-tokens](lydell/js-tokens)**
     - name: js-tokens
     - licenses: MIT
@@ -3063,7 +3029,6 @@
     - name: json-schema-traverse
     - licenses: MIT
     - repository: https://github.com/epoberezkin/json-schema-traverse
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/json-schema-traverse/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/json-schema-traverse/LICENSE)
  - **[json-schema-typed](https://github.com/RemyRylan/json-schema-typed)**
     - name: json-schema-typed
     - licenses: BSD-2-Clause
@@ -3080,7 +3045,6 @@
     - name: jsonc-parser
     - licenses: MIT
     - repository: https://github.com/microsoft/node-jsonc-parser
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/jsonc-parser/LICENSE.md](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/jsonc-parser/LICENSE.md)
  - **[jsonparse](http://github.com/creationix/jsonparse)**
     - name: jsonparse
     - licenses: MIT
@@ -3169,7 +3133,6 @@
     - name: log-symbols
     - licenses: MIT
     - repository: sindresorhus/log-symbols
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/log-symbols/license](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/log-symbols/license)
  - **[log-update](sindresorhus/log-update)**
     - name: log-update
     - licenses: MIT
@@ -3190,7 +3153,6 @@
     - name: magic-string
     - licenses: MIT
     - repository: https://github.com/Rich-Harris/magic-string
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/magic-string/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/magic-string/LICENSE)
  - **[make-dir](sindresorhus/make-dir)**
     - name: make-dir
     - licenses: MIT
@@ -3279,7 +3241,6 @@
     - name: mimic-function
     - licenses: MIT
     - repository: sindresorhus/mimic-function
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/mimic-function/license](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/mimic-function/license)
  - **[mini-css-extract-plugin](webpack/mini-css-extract-plugin)**
     - name: mini-css-extract-plugin
     - licenses: MIT
@@ -3499,7 +3460,6 @@
     - name: onetime
     - licenses: MIT
     - repository: sindresorhus/onetime
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/onetime/license](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/onetime/license)
  - **[open](sindresorhus/open)**
     - name: open
     - licenses: MIT
@@ -3516,7 +3476,6 @@
     - name: ora
     - licenses: MIT
     - repository: sindresorhus/ora
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/ora/license](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/ora/license)
  - **[ordered-binary](http://github.com/kriszyp/ordered-binary)**
     - name: ordered-binary
     - licenses: MIT
@@ -3585,7 +3544,6 @@
     - name: parse5
     - licenses: MIT
     - repository: https://github.com/inikulin/parse5
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/parse5/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/parse5/LICENSE)
  - **[parseurl](pillarjs/parseurl)**
     - name: parseurl
     - licenses: MIT
@@ -3634,7 +3592,6 @@
     - name: picomatch
     - licenses: MIT
     - repository: micromatch/picomatch
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/picomatch/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/picomatch/LICENSE)
  - **[pify](sindresorhus/pify)**
     - name: pify
     - licenses: MIT
@@ -3835,7 +3792,6 @@
     - name: require-from-string
     - licenses: MIT
     - repository: floatdrop/require-from-string
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/require-from-string/license](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/require-from-string/license)
  - **[requires-port](https://github.com/unshiftio/requires-port)**
     - name: requires-port
     - licenses: MIT
@@ -3864,7 +3820,6 @@
     - name: restore-cursor
     - licenses: MIT
     - repository: sindresorhus/restore-cursor
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/restore-cursor/license](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/restore-cursor/license)
  - **[retry](https://github.com/tim-kos/node-retry)**
     - name: retry
     - licenses: MIT
@@ -3897,7 +3852,6 @@
     - name: rxjs
     - licenses: Apache-2.0
     - repository: https://github.com/reactivex/rxjs
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/rxjs/LICENSE.txt](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/rxjs/LICENSE.txt)
  - **[safe-buffer](https://github.com/feross/safe-buffer)**
     - name: safe-buffer
     - licenses: MIT
@@ -4022,7 +3976,6 @@
     - name: signal-exit
     - licenses: ISC
     - repository: https://github.com/tapjs/signal-exit
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/signal-exit/LICENSE.txt](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/signal-exit/LICENSE.txt)
  - **[sigstore](https://github.com/sigstore/sigstore-js)**
     - name: sigstore
     - licenses: Apache-2.0
@@ -4079,7 +4032,6 @@
     - name: source-map
     - licenses: BSD-3-Clause
     - repository: http://github.com/mozilla/source-map
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/source-map/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/source-map/LICENSE)
  - **[spdx-exceptions](kemitchell/spdx-exceptions.json)**
     - name: spdx-exceptions
     - licenses: CC-BY-3.0
@@ -4124,7 +4076,6 @@
     - name: stdin-discarder
     - licenses: MIT
     - repository: sindresorhus/stdin-discarder
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/stdin-discarder/license](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/stdin-discarder/license)
  - **[string_decoder](https://github.com/nodejs/string_decoder)**
     - name: string_decoder
     - licenses: MIT
@@ -4153,7 +4104,6 @@
     - name: string-width
     - licenses: MIT
     - repository: sindresorhus/string-width
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/string-width/license](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/string-width/license)
  - **[strip-ansi](chalk/strip-ansi)**
     - name: strip-ansi
     - licenses: MIT
@@ -4162,7 +4112,6 @@
     - name: strip-ansi
     - licenses: MIT
     - repository: chalk/strip-ansi
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/strip-ansi/license](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/strip-ansi/license)
  - **[strip-bom](sindresorhus/strip-bom)**
     - name: strip-bom
     - licenses: MIT
@@ -4307,7 +4256,6 @@
     - name: tslib
     - licenses: 0BSD
     - repository: https://github.com/Microsoft/tslib
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/tslib/LICENSE.txt](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/tslib/LICENSE.txt)
  - **[tsyringe](https://github.com/Microsoft/tsyringe)**
     - name: tsyringe
     - licenses: MIT
@@ -4624,7 +4572,6 @@
     - name: yoctocolors
     - licenses: MIT
     - repository: sindresorhus/yoctocolors
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/yoctocolors/license](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/yoctocolors/license)
  - **[zod-to-json-schema](https://github.com/StefanTerdell/zod-to-json-schema)**
     - name: zod-to-json-schema
     - licenses: ISC
@@ -4637,5 +4584,3 @@
     - name: zone.js
     - licenses: MIT
     - repository: https://github.com/angular/angular
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/zone.js/LICENSE](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/zone.js/LICENSE)
-    - license text: [jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/zone.js/LICENSE.wrapped](jme-jwe-scs/jme-jwe-scs-ui/third-party-licenses/zone.js/LICENSE.wrapped)

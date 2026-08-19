@@ -42,3 +42,7 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Generated license notices shipped in the build output
+/src/assets/THIRD-PARTY-LICENSES.md
+/src/assets/third-party-licenses/
