@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.5.0] - 2026-09-18
+
+### Dependencies
+- **ch.admin.bit.jeap.jme:jme-spring-boot-integration-test**: 6.6.1 → 6.7.0 (minor)
+- **jest-environment-jsdom**: 30.5.1 → 30.5.2 (patch)
+- **jest**: 30.5.1 → 30.5.2 (patch)
+- **fast-uri**: 4.1.5 → 4.2.1 (minor)
+- **eslint**: 10.10.0 → 10.11.0 (minor)
+
 ## [11.4.0] - 2026-09-17
 
 ### Dependencies
