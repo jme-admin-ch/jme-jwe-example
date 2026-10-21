@@ -15,7 +15,7 @@
     "generateLicenseFile": "jeap-frontend-license-checker notices && jeap-frontend-license-checker notices --out src/assets/THIRD-PARTY-LICENSES.md --texts folder --texts-dir third-party-licenses"
   },
   "private": true,
-  "packageManager": "npm@12.2.0",
+  "packageManager": "npm@12.2.1",
   "dependencies": {
     "@angular/cdk": "^21.2.14",
     "@angular/common": "^21.2.24",
