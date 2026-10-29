@@ -10,8 +10,12 @@ oauth-mock-data:
       registered-redirect-uri: [ "http://localhost:8080/jme-jwe-scs/",
                                  "http://localhost:4200/" ]
       userroles: [ "jme_@person_#read", "jme_@person_#write" ]
+      audience:
+        - "https://resources.jme.admin.ch/jme/jme-jwe-scs"
 
     - client-id: "jme-jwe-it-client"
       client-secret: "{noop}secret"
       context: "SYS"
       userroles: [ "jme_@person_#read", "jme_@person_#write" ]
+      audience:
+        - "https://resources.jme.admin.ch/jme/jme-jwe-scs"

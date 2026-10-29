@@ -76,6 +76,7 @@ class JweScsIntegrationTest {
     private static final String HEADER_ACCEPT = "Accept";
     private static final String HEADER_RESPONSE_KEY = "JWE-Response-Key";
     private static final String BEARER_PREFIX = "Bearer ";
+    private static final String RESOURCE_ID = "https://resources.jme.admin.ch/jme/jme-jwe-scs";
     private static final String ROLE_PERSON_READ = "jme_@person_#read";
     private static final String ROLE_PERSON_WRITE = "jme_@person_#write";
 
@@ -355,6 +356,7 @@ class JweScsIntegrationTest {
 
     private String token(String... userRoles) {
         return jwsBuilderFactory.createValidForFixedLongPeriodBuilder(SUBJECT, JeapAuthenticationContext.USER)
+                .withAudiences(RESOURCE_ID)
                 .withUserRoles(userRoles)
                 .build().serialize();
     }
@@ -370,7 +372,7 @@ class JweScsIntegrationTest {
     private List<RSAKey> jwePublicKeys() throws Exception {
         String jwks = client().get().uri(JWE_JWKS_PATH).retrieve().toEntity(String.class).getBody();
         return JWKSet.parse(Objects.requireNonNull(jwks)).getKeys().stream()
-                .map(key -> (RSAKey) key)
+                .map(RSAKey.class::cast)
                 .toList();
     }
 
