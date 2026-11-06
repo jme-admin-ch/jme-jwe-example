@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Upgrade the UI to Angular 22 and Oblique 16, including the authentication, translation and build tooling.
 - Keep the webpack builder on 22.0.9 for a consistent Babel 7 / Jest dependency tree.
+- Use the Java 25 / Node 24 browser build image in Jenkins to meet Angular 22's Node.js requirements.
 
 ## [13.24.0] - 2026-11-09
 
