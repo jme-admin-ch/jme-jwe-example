@@ -1,4 +1,4 @@
-import {Component, inject, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, signal} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {TranslateService} from '@ngx-translate/core';
 import {OAuthService} from 'angular-oauth2-oidc';
@@ -9,6 +9,7 @@ import {Person, PublicInfo} from '../person/person.model';
 	selector: 'app-home',
 	templateUrl: './home.html',
 	styleUrl: './home.scss',
+	changeDetection: ChangeDetectionStrategy.Eager,
 	standalone: false
 })
 export class Home {

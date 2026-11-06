@@ -1,4 +1,4 @@
-import {Component, computed, inject, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, inject, signal} from '@angular/core';
 import {toSignal} from '@angular/core/rxjs-interop';
 import {FormBuilder, Validators} from '@angular/forms';
 import {HttpErrorResponse} from '@angular/common/http';
@@ -33,6 +33,7 @@ export interface JsonToken {
 	selector: 'app-decrypt',
 	templateUrl: './decrypt.html',
 	styleUrl: './decrypt.scss',
+	changeDetection: ChangeDetectionStrategy.Eager,
 	standalone: false
 })
 export class Decrypt {

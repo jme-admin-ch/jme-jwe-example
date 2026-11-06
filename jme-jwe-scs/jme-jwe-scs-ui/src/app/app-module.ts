@@ -8,8 +8,8 @@ import {registerLocaleData} from '@angular/common';
 import localeDECH from '@angular/common/locales/de-CH';
 import localeFRCH from '@angular/common/locales/fr-CH';
 import localeITCH from '@angular/common/locales/it-CH';
-import {TranslateModule} from '@ngx-translate/core';
-import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, withInterceptorsFromDi} from '@angular/common/http';
+import {TranslatePipe} from '@ngx-translate/core';
+import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, withInterceptorsFromDi, withXhr} from '@angular/common/http';
 import {jeapJweInterceptor, provideJeapJweClient} from '@jeap/jeap-jwe-client';
 import {OAuthModule} from 'angular-oauth2-oidc';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -34,7 +34,7 @@ registerLocaleData(localeITCH);
 		AppRoutingModule,
 		ObMasterLayoutModule,
 		ObButtonModule,
-		TranslateModule,
+		TranslatePipe,
 		ReactiveFormsModule,
 		MatButtonModule,
 		MatCardModule,
@@ -62,7 +62,7 @@ registerLocaleData(localeITCH);
 				applicationOperator: 'Federal Office of Information Technology, Systems and Telecommunication FOITT',
 				contact: [{email: 'jeap-community@bit.admin.ch'}]
 			},
-			hasLanguageInUrl: false
+			language: {hasLanguageInUrl: false}
 		}),
 		// Transparent JWE encryption: the backend publishes its JWE configuration (JWKS path,
 		// context-path-prefixed included/excluded paths) at /.well-known/jwe-configuration and
@@ -73,7 +73,7 @@ registerLocaleData(localeITCH);
 			jweConfigPath: `${CONTEXT_PATH}/.well-known/jwe-configuration`
 		}),
 		{provide: HTTP_INTERCEPTORS, useClass: ObHttpApiInterceptor, multi: true},
-		provideHttpClient(withInterceptors([jeapJweInterceptor]), withInterceptorsFromDi()),
+		provideHttpClient(withXhr(), withInterceptors([jeapJweInterceptor]), withInterceptorsFromDi()),
 		provideAppInitializer(initializeAuth)
 	],
 	bootstrap: [App]

@@ -4,7 +4,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import {TranslateModule} from '@ngx-translate/core';
+import {TranslatePipe, provideTranslateService} from '@ngx-translate/core';
 import {OAuthService} from 'angular-oauth2-oidc';
 import {of} from 'rxjs';
 import {Home} from './home';
@@ -23,8 +23,9 @@ describe('Home', () => {
 		};
 		await TestBed.configureTestingModule({
 			declarations: [Home],
-			imports: [ReactiveFormsModule, MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, TranslateModule.forRoot()],
+			imports: [ReactiveFormsModule, MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, TranslatePipe],
 			providers: [
+				provideTranslateService(),
 				{provide: PersonService, useValue: personService},
 				{provide: OAuthService, useValue: {getIdentityClaims: () => ({given_name: 'Henriette', family_name: 'Muster'})}}
 			]

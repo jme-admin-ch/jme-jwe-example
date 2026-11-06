@@ -5,7 +5,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import {TranslateModule} from '@ngx-translate/core';
+import {TranslatePipe, provideTranslateService} from '@ngx-translate/core';
 import {of, throwError} from 'rxjs';
 import {Decrypt} from './decrypt';
 import {DecryptService} from './decrypt.service';
@@ -23,8 +23,8 @@ describe('Decrypt', () => {
 		decryptService = {decrypt: jest.fn(() => of(decrypted))};
 		await TestBed.configureTestingModule({
 			declarations: [Decrypt],
-			imports: [ReactiveFormsModule, MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, TranslateModule.forRoot()],
-			providers: [{provide: DecryptService, useValue: decryptService}]
+			imports: [ReactiveFormsModule, MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, TranslatePipe],
+			providers: [provideTranslateService(), {provide: DecryptService, useValue: decryptService}]
 		}).compileComponents();
 	});
 

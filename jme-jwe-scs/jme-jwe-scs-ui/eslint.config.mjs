@@ -53,6 +53,8 @@ export default tseslint.config(
 			"@angular-eslint/prefer-output-readonly": "error",
 			"@angular-eslint/prefer-signals": "off",
 			"@angular-eslint/prefer-standalone": "off",
+			// Keep the zone-based change detection preserved by the Angular 22 migration.
+			"@angular-eslint/prefer-on-push-component-change-detection": "off",
 			"@angular-eslint/relative-url-prefix": "error",
 			"@angular-eslint/use-component-selector": "error",
 			"@typescript-eslint/array-type": "error",
