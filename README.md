@@ -162,17 +162,3 @@ more information.
 ## License
 
 This repository is Apache-2.0 licensed, see [LICENSE](LICENSE).
-
-## Frontend dependencies
-
-The UI uses Angular 22 and Oblique 16. Use Node.js 22.22.3+, 24.15+ or 26+
-and TypeScript 6. Install with `npm ci`; run `npm run build-prod`,
-`npm run test:ci` and `npm run lint` in `jme-jwe-scs/jme-jwe-scs-ui`.
-The Angular migration preserves zone-based change detection and XHR transport
-for the existing authentication and JWE interceptors.
-
-The webpack builder is pinned to `@angular-devkit/build-angular` 22.0.9, which
-supports Angular 22 and TypeScript 6 and keeps the existing Jest tooling on Babel 7.
-Builder 22.1+ brings Babel 8 and currently produces incompatible transitive Jest
-peer dependencies. Recheck this pin when the Jest/Babel dependency tree supports
-Babel 8 consistently. Angular runtime and compiler remain on 22.2.4.
