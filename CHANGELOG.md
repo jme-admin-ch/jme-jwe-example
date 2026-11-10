@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [13.26.0] - 2026-11-10
+
+### Dependencies
+- **ch.admin.bit.jeap:jeap-oauth-mock-server**: 11.15.2 → 11.16.0 (minor)
+- **@angular/router**: 22.2.4 → 22.2.5 (patch)
+- **@angular/platform-browser-dynamic**: 22.2.4 → 22.2.5 (patch)
+- **@angular/platform-browser**: 22.2.4 → 22.2.5 (patch)
+- **@angular/forms**: 22.2.4 → 22.2.5 (patch)
+- **@angular/core**: 22.2.4 → 22.2.5 (patch)
+- **@angular/compiler-cli**: 22.2.4 → 22.2.5 (patch)
+- **@angular/compiler**: 22.2.4 → 22.2.5 (patch)
+- **@angular/common**: 22.2.4 → 22.2.5 (patch)
+
 ## [13.25.0] - 2026-11-09
 
 ### Changed
