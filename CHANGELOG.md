@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [13.31.0] - 2026-11-15
+
+### Dependencies
+- **ch.admin.bit.jeap.jme:jme-spring-boot-integration-test**: 8.9.0 → 8.10.0 (minor)
+- **prettier**: 3.9.10 → 3.10.0 (minor)
+- **@jeap/jeap-jwe-client**: 1.3.13 → 1.3.14 (patch)
+- **@angular/router**: 22.2.5 → 22.2.6 (patch)
+- **@angular/platform-browser-dynamic**: 22.2.5 → 22.2.6 (patch)
+- **@angular/platform-browser**: 22.2.5 → 22.2.6 (patch)
+- **@angular/material**: 22.2.6 → 22.2.7 (patch)
+- **@angular/forms**: 22.2.5 → 22.2.6 (patch)
+- **@angular/core**: 22.2.5 → 22.2.6 (patch)
+- **@angular/compiler-cli**: 22.2.5 → 22.2.6 (patch)
+- **@angular/compiler**: 22.2.5 → 22.2.6 (patch)
+- **@angular/common**: 22.2.5 → 22.2.6 (patch)
+- **@angular/cdk**: 22.2.6 → 22.2.7 (patch)
+
 ## [13.30.0] - 2026-11-14
 
 ### Dependencies
