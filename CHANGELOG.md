@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [13.36.0] - 2026-11-24
+
+### Dependencies
+- **ch.admin.bit.jeap:jeap-oauth-mock-server**: 11.19.0 → 11.20.0 (minor)
+- **ch.admin.bit.jeap.jme:jme-spring-boot-integration-test**: 8.11.0 → 8.13.0 (minor)
+- **com.microsoft.playwright:playwright**: 1.65.0 → 1.65.1 (patch)
+- **npm**: 12.2.2 → 12.2.3 (patch)
+- **angular-eslint**: 22.7.0 → 22.8.0 (minor)
+- **@oblique/toolchain**: 16.0.4 → 16.0.5 (patch)
+- **@oblique/oblique**: 16.0.4 → 16.0.5 (patch)
+- **@jeap/jeap-jwe-client**: 1.3.14 → 1.3.15 (patch)
+- **@angular/router**: 22.2.6 → 22.3.0 (minor)
+- **@angular/platform-browser-dynamic**: 22.2.6 → 22.3.0 (minor)
+- **@angular/platform-browser**: 22.2.6 → 22.3.0 (minor)
+- **@angular/material**: 22.2.7 → 22.3.0 (minor)
+- **@angular/forms**: 22.2.6 → 22.3.0 (minor)
+- **@angular/core**: 22.2.6 → 22.3.0 (minor)
+- **@angular/compiler-cli**: 22.2.6 → 22.3.0 (minor)
+- **@angular/compiler**: 22.2.6 → 22.3.0 (minor)
+- **@angular/common**: 22.2.6 → 22.3.0 (minor)
+- **@angular/cli**: 22.2.7 → 22.3.0 (minor)
+- **@angular/cdk**: 22.2.7 → 22.3.0 (minor)
+
 ## [13.35.0] - 2026-11-21
 
 ### Dependencies
